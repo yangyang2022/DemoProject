@@ -14,7 +14,8 @@
         <!--<module>EmployeeManager</module>-->
         <!--<module>ShopDemo</module>-->
         <!--<module>MsgDemoProject</module>-->
-        <module>Shop01</module>
+        <!--<module>Shop01</module>-->
+        <module>Struts2Demo</module>
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
         <!--<module>SitMeshDemo</module>-->

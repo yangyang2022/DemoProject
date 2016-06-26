@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value="action,do,yang,"></constant>
+    <constant name="struts.configuration.xml.reload" value="true"></constant>
+    <constant name="struts.devMode" value="true"></constant>
+
+    <package name="default" namespace="/" extends="struts-default">
+        <action name="*_*" class="com.yangyang.action.{1}Action" method="{2}">
+            <result name="success">/WEB-INF/{1}/{2}.jsp</result>
+            <result type="redirect" name="r_list">/{1}_list</result>
+        </action>
+    </package>
+</struts>
