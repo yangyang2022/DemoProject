@@ -1,0 +1,7 @@
+sitMesh 的使用方法
+1: 定义相应的模板文件
+2: 编写装饰器的文件 ,说明哪些页面需要引入模板
+3: 在web.xml中开启 sitmesh 文件
+
+===== 注意 ===
+必须在 webapp 下 新建 decorators.xml

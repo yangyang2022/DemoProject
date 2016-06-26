@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--<mapper namespace="UserMapper">-->
+<mapper namespace="com.yangyang.model.Category">
+    <insert id="add" parameterType="Category">
+        INSERT INTO t_category VALUES (NULL ,#{name})
+    </insert>
+
+    <update id="update" parameterType="Category">
+        UPDATE t_category SET name=#{name} WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM t_category WHERE id=#{id}
+    </delete>
+
+    <select id="load" parameterType="int" resultType="Category">
+        SELECT * FROM t_category
+        WHERE id=#{id}
+    </select>
+    <!--# 使用的''替换 ,$ 使用的原文本 替换 -->
+    <select id="list" parameterType="map" resultType="Category">
+        select * from t_category
+        <where>
+            <if test="name!=null">
+                name like #{name}
+            </if>
+        </where>
+    </select>
+</mapper>

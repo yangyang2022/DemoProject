@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<persons>
+  <person age="11">
+    <name>zhangsan</name>
+    <sex>man</sex>
+    <idcard>2011080329</idcard>
+  </person>
+  <person age="11">
+    <name>zhangsan</name>
+    <sex>man</sex>
+    <idcard>2011080329</idcard>
+  </person>
+  <person age="12">
+    <name>lisi</name>
+    <sex>feman</sex>
+    <idcard>2011080330</idcard>
+  </person>
+  <person age="13">
+    <name>wamgwu</name>
+    <sex>feman</sex>
+    <idcard>2011080331</idcard>
+  </person>
+  <person age="14">
+    <name>zhaoliu</name>
+    <sex>man</sex>
+    <idcard>2011080332</idcard>
+  </person>
+</persons>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<deps> 
+  <dep> 
+    <id>1</id>  
+    <depName>安徽</depName> 
+  </dep>  
+  <dep> 
+    <id>2</id>  
+    <depName>北京</depName> 
+  </dep>  
+  <dep> 
+    <id>3</id>  
+    <depName>上海</depName> 
+  </dep>  
+  <dep> 
+    <id>4</id>  
+    <depName>美国</depName> 
+  </dep>  
+  <dep>
+    <id>5</id>
+    <depName>欧洲</depName>
+  </dep>
+</deps>

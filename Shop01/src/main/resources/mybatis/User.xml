@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--<mapper namespace="UserMapper">-->
+<mapper namespace="com.yangyang.model.User">
+    <insert id="add" parameterType="User">
+        INSERT INTO t_user VALUES (NULL ,#{username},#{password},#{nickname},#{type})
+    </insert>
+
+    <update id="update" parameterType="User">
+        UPDATE t_user SET nickname=#{nickname},password=#{password},type=#{type} WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM t_user WHERE id=#{id}
+    </delete>
+
+    <resultMap id="userMap" type="User" autoMapping="true">
+        <id column="user_id" property="id" />
+        <collection property="addresses" ofType="Address" >
+            <id column="a_id" property="id"/>
+            <result column="phone" property="phone" />
+            <result column="postcode" property="postcode" />
+            <result column="name" property="name" />
+        </collection>
+    </resultMap>
+    <select id="load" parameterType="int" resultMap="userMap">
+        SELECT *,t2.id as 'a_id' FROM  t_user t1 LEFT JOIN t_address t2 ON (t1.id=t2.user_id)
+        WHERE t1.id=#{id}
+    </select>
+    <select id="load_by_name" parameterType="String" resultMap="userMap">
+        SELECT *,t2.id as 'a_id' FROM  t_user t1 LEFT JOIN t_address t2 ON (t1.id=t2.user_id)
+        WHERE t1.username=#{username}
+    </select>
+
+    <!--# 使用的''替换 ,$ 使用的原文本 替换 -->
+    <select id="find" parameterType="map" resultType="User">
+        select * from t_user
+        <where>
+            <if test="name!=null">
+                 (username like #{name} or nickname like #{name})
+            </if>
+            <if test="type!=null">
+                and type=#{type}
+            </if>
+        </where>
+        <if test="sort != null">
+            ORDER BY ${sort} 
+            <choose>
+                <when test="order!=null">${order}</when>
+                <otherwise>ASC</otherwise>
+            </choose>
+        </if>
+        limit #{pageOffset} ,#{pageSize};
+    </select>
+    <select id="find_count" parameterType="map" resultType="int">
+        SELECT count(*) from t_user
+        <if test="name!=null">
+            WHERE (username like #{name} or nickname like #{name})
+        </if> ;
+    </select>
+</mapper>

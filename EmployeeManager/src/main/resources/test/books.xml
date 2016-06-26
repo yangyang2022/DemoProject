@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book id="1">
+        <title>think in java</title>
+        <author>Bruce elkel</author>
+        <price>89.9</price>
+        <book>
+            <title>hehe</title>
+        </book>
+    </book>
+    <book id="2">
+        <title>c++ in java</title>
+        <author>Lippman</author>
+        <price>79.9</price>
+    </book>
+    <book id="3">
+        <title>python in java</title>
+        <author>yangyang</author>
+        <price>49.9</price>
+    </book>
+    <book id="4">
+        <title>scala in java</title>
+        <author>yangyang</author>
+        <price>45</price>
+    </book>
+</books>

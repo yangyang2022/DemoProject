@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!--<mapper namespace="UserMapper">-->
+<mapper namespace="com.yangyang.model.Address">
+    <insert id="add" parameterType="Address">
+        INSERT INTO t_address VALUES (NULL ,#{name},#{phone},#{postcode},#{user.id})
+    </insert>
+
+    <update id="update" parameterType="Address">
+        UPDATE t_address SET name=#{name},phone=#{phone},postcode=#{postcode} WHERE id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE FROM t_address WHERE id=#{id}
+    </delete>
+
+    <resultMap id="addressMap" type="Address" autoMapping="true">
+        <id column="a_id" property="id" />
+        <!--当数据库中的属性 和 类的属性不一致时 需要映射
+        <result column="post_code" property="postcode" />-->
+        <!--使用以下方式 最大问题是 N+1 问题 ,很少使用
+        <association property="user" column="user_id" javaType="User"
+                     select="User.load" />-->
+        <association property="user" javaType="User" resultMap="userMap" />
+    </resultMap>
+    <resultMap id="userMap" type="User">
+        <id column="user_id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="nickname" property="nickname" />
+        <result column="type" property="type" />
+    </resultMap>
+    <select id="load" parameterType="int" resultMap="addressMap">
+        SELECT *,t1.id as 'a_id' FROM  t_address t1 RIGHT JOIN t_user t2 ON (t1.user_id=t2.id) WHERE t1.id=#{id}
+    </select>
+    <!--SELECT * FROM t_address WHERE user_id=#{user_id}-->
+    <select id="list" parameterType="map" resultMap="addressMap">
+        SELECT *,t1.id as 'a_id' FROM  t_address t1 RIGHT JOIN t_user t2
+        ON (t1.user_id=t2.id) WHERE t2.id=#{user_id}
+    </select>
+</mapper>

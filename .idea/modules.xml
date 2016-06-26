@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DemoProject.iml" filepath="$PROJECT_DIR$/DemoProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DemoTest/DemoTest.iml" filepath="$PROJECT_DIR$/DemoTest/DemoTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EmployeeManager/EmployeeManager.iml" filepath="$PROJECT_DIR$/EmployeeManager/EmployeeManager.iml" />
+      <module fileurl="file://$PROJECT_DIR$/JSTLDemo/JSTLDemo.iml" filepath="$PROJECT_DIR$/JSTLDemo/JSTLDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/MsgDemoProject/MsgDemoProject.iml" filepath="$PROJECT_DIR$/MsgDemoProject/MsgDemoProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Shop01/Shop01.iml" filepath="$PROJECT_DIR$/Shop01/Shop01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ShopDemo/ShopDemo.iml" filepath="$PROJECT_DIR$/ShopDemo/ShopDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SitMeshDemo/SitMeshDemo.iml" filepath="$PROJECT_DIR$/SitMeshDemo/SitMeshDemo.iml" />
+    </modules>
+  </component>
+</project>

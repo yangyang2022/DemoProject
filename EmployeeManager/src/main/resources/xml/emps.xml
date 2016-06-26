@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<emps> 
+  <emp> 
+    <id>1</id>  
+    <name>反反复复</name>  
+    <sex>男</sex>  
+    <salary>123.0</salary>  
+    <depId>1</depId> 
+  </emp>  
+  <emp> 
+    <id>2</id>  
+    <name>yangyang</name>  
+    <sex>男</sex>  
+    <salary>12444.0</salary>  
+    <depId>2</depId> 
+  </emp>  
+  <emp> 
+    <id>3</id>  
+    <name>xiaomo</name>  
+    <sex>男</sex>  
+    <salary>321.0</salary>  
+    <depId>2</depId> 
+  </emp>  
+  <emp> 
+    <id>4</id>  
+    <name>yangge</name>  
+    <sex>男</sex>  
+    <salary>345.0</salary>  
+    <depId>1</depId> 
+  </emp>  
+  <emp>
+    <id>5</id>
+    <name>阿达</name>
+    <sex>男</sex>
+    <salary>44.0</salary>
+    <depId>5</depId>
+  </emp>
+</emps>
