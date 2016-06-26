@@ -12,7 +12,6 @@ public class SystemContextFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
-
         try {
             int pageOffset = 0;
             int pageSize = 15;

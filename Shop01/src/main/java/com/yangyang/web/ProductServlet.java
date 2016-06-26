@@ -9,7 +9,6 @@ import com.yangyang.model.Product;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.Map;
 
 @WebServlet(name = "ProductServlet",urlPatterns = "/product")
 public class ProductServlet extends BaseServlet {
@@ -35,19 +34,22 @@ public class ProductServlet extends BaseServlet {
         return "product/addInput.jsp";
     }
     public String add(HttpServletRequest request, HttpServletResponse response){
+
         Product p = (Product) RequestUtils.setParams(Product.class,request);
-        if(!RequestUtils.validate(Product.class,request)){
-            addInput(request, response);
-            return "product/addInput.jsp";
-        }
+        RequestUtils.validate(Product.class,request);
         int cid = 0;
         try {
             cid = Integer.parseInt(request.getParameter("cid"));
         } catch (NumberFormatException e) {
-            ((Map)request.getAttribute("errors")).put("cid","商品类别必须选择!");
+            this.getErrors().put("cid","商品类别必须选择!");
+            //addInput(request, response);
+            //return "product/addInput.jsp";
+        }
+        if(this.hasError()){
             addInput(request, response);
             return "product/addInput.jsp";
         }
+        System.out.println("size: "+getErrors().size());
         return redirect+"/product";
     }
 

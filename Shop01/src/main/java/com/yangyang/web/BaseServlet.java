@@ -2,6 +2,7 @@ package com.yangyang.web;
 
 import com.yangyang.dao.DaoFactory;
 import com.yangyang.model.User;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,16 +12,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Map;
 
 @WebServlet(name = "BaseServlet")
 public class BaseServlet extends HttpServlet {
-
+    private Map<String,String> errors = new HashMap<>();
     public static final String redirect="redirect:";
+
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         DaoFactory.injectDao(this);//注入所有DAO
+
+        request.setAttribute("errors",errors);
+        if(ServletFileUpload.isMultipartContent(request)){
+            request = new MulitpartWrapper(request);
+        }
+
         String method = request.getParameter("method");
         if(method == null || "".equals(method)) method = "list";
+
         try {
             Method m = this.getClass().getMethod(method,HttpServletRequest.class,HttpServletResponse.class);
             //这里进行权限控制
@@ -72,5 +83,12 @@ public class BaseServlet extends HttpServlet {
             }
         }
         return 0;
+    }
+
+    protected Map<String,String> getErrors(){
+        return errors;
+    }
+    protected boolean hasError(){
+        return errors != null && errors.size() > 0;
     }
 }

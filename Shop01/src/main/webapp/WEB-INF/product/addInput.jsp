@@ -7,7 +7,9 @@
 </head>
 <body>
 <jsp:include page="inc.jsp" />
-<form action="product?method=add" method="post">
+<form action="product" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="method" value="add" />
+    <input type="hidden" name="yangyang" value="add" />
     <table width="900" align="center" class="thin-border">
         <tr>
             <td>商品名称:</td><td> <input type="text" name="name" value="${param.name}"><span class="errorContent">${errors.name}</span> </td>
@@ -37,6 +39,7 @@
             <td>商品图片</td>
             <td>
                 <input type="file" name="img" value="${param.img}">
+                <span class="errorContent">${errors.img}</span>
              </td>
         </tr>
         <tr>

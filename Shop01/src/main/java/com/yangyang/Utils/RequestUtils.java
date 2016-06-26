@@ -4,16 +4,15 @@ import org.apache.commons.beanutils.BeanUtils;
 
 import javax.servlet.http.HttpServletRequest;
 import java.lang.reflect.Field;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class RequestUtils {
     public static boolean validate(Class clz,HttpServletRequest request){
         Field[] fs = clz.getDeclaredFields();
-        Map<String,String> errors = new HashMap<>();
         boolean isValidate = true;
-        request.setAttribute("errors",errors);
+        Map<String,String> errors = (Map<String, String>) request.getAttribute("errors");
+        //request.setAttribute("errors",errors);
 
         for(Field f:fs){
             if(f.isAnnotationPresent(ValidateForm.class)){
