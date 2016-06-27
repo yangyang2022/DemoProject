@@ -1,5 +1,3 @@
-package com.yangyang.Test;
-
 import com.yangyang.Utils.DBUtils;
 import org.junit.Test;
 

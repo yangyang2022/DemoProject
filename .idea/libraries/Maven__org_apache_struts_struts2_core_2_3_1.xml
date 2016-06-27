@@ -8,6 +8,7 @@
     </JAVADOC>
     <SOURCES>
       <root url="jar://$MAVEN_REPOSITORY$/org/apache/struts/struts2-core/2.3.1/struts2-core-2.3.1-sources.jar!/" />
+      <root url="jar://$USER_HOME$/.ideaLibSources/struts2-core-2.3.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

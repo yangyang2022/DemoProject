@@ -6,14 +6,6 @@
         <element id="directory" name="classes">
           <element id="module-output" name="JSTLDemo" />
         </element>
-        <element id="directory" name="lib">
-          <element id="library" level="project" name="Maven: jstl:jstl:1.2" />
-          <element id="library" level="project" name="Maven: taglibs:standard:1.1.2" />
-          <element id="library" level="project" name="Maven: dom4j:dom4j:1.6.1" />
-          <element id="library" level="project" name="Maven: xml-apis:xml-apis:1.0.b2" />
-          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.6" />
-          <element id="library" level="project" name="Maven: org.mybatis:mybatis:3.1.1" />
-        </element>
       </element>
       <element id="directory" name="META-INF">
         <element id="file-copy" path="$PROJECT_DIR$/JSTLDemo/target/JSTLDemo/META-INF/MANIFEST.MF" />

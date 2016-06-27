@@ -5,6 +5,9 @@ import com.yangyang.model.Department;
 import com.yangyang.model.User;
 import org.apache.struts2.ServletActionContext;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class UserAction {
     private static final String SUCCESS = "success";
     private String username;
@@ -52,7 +55,19 @@ public class UserAction {
         return SUCCESS;
     }
     public String show(){
+        this.setUsername("习近平");
         ActionContext.getContext().put("age",33);
+
+        List<User> users = new ArrayList<>();
+
+        users.add(new User(1,"唐僧","123123"));
+        users.add(new User(2,"悟空","123123"));
+        users.add(new User(3,"八戒","123123"));
+        users.add(new User(4,"沙僧","123123"));
+        users.add(new User(5,"洋洋","123123"));
+
+        ActionContext.getContext().put("us",users);
+
         return SUCCESS;
     }
     public String demo(){

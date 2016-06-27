@@ -1,10 +1,10 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Title</title>
 </head>
 <body>
-    <h1> Role add </h1>
-    登录用户:${loginUser}
+<h1>File add</h1>
 </body>
 </html>

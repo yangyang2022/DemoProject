@@ -15,6 +15,18 @@
     <file type="web" url="file://$PROJECT_DIR$/TestServlet" />
   </component>
   <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/SitMeshDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/DemoTest/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/MsgDemoProject/pom.xml" />
+        <option value="$PROJECT_DIR$/JSTLDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/EmployeeManager/pom.xml" />
+        <option value="$PROJECT_DIR$/Struts2Demo/pom.xml" />
+        <option value="$PROJECT_DIR$/ShopDemo/pom.xml" />
+      </list>
+    </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/MsgDemo/pom.xml" />

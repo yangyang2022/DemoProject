@@ -4,10 +4,29 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.action.extension" value="action,,"></constant>
-
+    <constant name="struts.action.extension" value="action,," />
+    <constant name="struts.multipart.maxSize" value="10000000" />
     <package name="default" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name="helloint" class="com.yangyang.intercepter.HelloIntecepter" />
+            <interceptor-stack name="helloStack">
+                <!--defaultStack 必须要有 -->
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="helloint" />
+            </interceptor-stack>
+        </interceptors>
+        <!-- 全局结果集 -->
+        <global-results>
+            <result name="error">/WEB-INF/inc/error.jsp</result>
+        </global-results> 
+        <!-- user/common/admin_user_addInput -->
+        <action name="*_*_*" class="com.yangyang.action.{2}Action" method="{3}">
+            <result>/WEB-INF/{2}/{3}.jsp</result>
+            <result name="articleAdd" type="redirect">/user_Article_add</result>
+        </action>
+
         <action name="*_*" class="com.yangyang.action.{1}Action" method="{2}">
+            <interceptor-ref name="helloStack" />
             <result name="success">/WEB-INF/{1}/{2}.jsp</result>
             <result type="redirect" name="r_list">/{1}_list</result>
         </action>

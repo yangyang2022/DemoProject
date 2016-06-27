@@ -1,5 +1,3 @@
-package com.yangyang.Test;
-
 import com.yangyang.dao.CommentDao;
 import com.yangyang.dao.ICommentDao;
 import com.yangyang.mode.Comment;

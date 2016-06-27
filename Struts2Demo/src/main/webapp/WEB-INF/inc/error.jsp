@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title></title>
+    <title>Title</title>
 </head>
 <body>
-    <h1> Role add </h1>
-    登录用户:${loginUser}
+    <h1>发现错误: <span style="color: red">${error}</span></h1>
 </body>
 </html>
