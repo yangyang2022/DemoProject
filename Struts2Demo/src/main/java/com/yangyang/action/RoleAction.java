@@ -11,4 +11,9 @@ public class RoleAction {
     public String addInput(){
         return SUCCESS;
     }
+
+    public String demo(){
+        System.out.println("role ... ");
+        return SUCCESS;
+    }
 }
