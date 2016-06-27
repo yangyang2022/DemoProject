@@ -4,9 +4,7 @@
 	"http://struts.apache.org/dtds/struts-2.3.dtd">
 
 <struts>
-    <constant name="struts.action.extension" value="action,do,yang,"></constant>
-    <constant name="struts.configuration.xml.reload" value="true"></constant>
-    <constant name="struts.devMode" value="true"></constant>
+    <constant name="struts.action.extension" value="action,,"></constant>
 
     <package name="default" namespace="/" extends="struts-default">
         <action name="*_*" class="com.yangyang.action.{1}Action" method="{2}">

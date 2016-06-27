@@ -1,6 +1,8 @@
 package com.yangyang.action;
 
 import com.opensymphony.xwork2.ActionContext;
+import com.yangyang.model.Department;
+import com.yangyang.model.User;
 import org.apache.struts2.ServletActionContext;
 
 public class UserAction {
@@ -35,12 +37,22 @@ public class UserAction {
         //method 2 通过actionContext设置值
         ActionContext.getContext().put("aaa","yangayngaaa");
         ActionContext.getContext().put("bbb",123123);
+
+        User u = new User(1,"老沈","123123");
+        Department dep = new Department("saohuang");
+        u.setDep(dep);
+        ActionContext.getContext().getValueStack().push(u);//push into root
+
         //method 3 servletApi 传值
         ServletActionContext.getRequest().setAttribute("req","hello requset");
         return SUCCESS;
     }
     public String addInput(){
         System.out.println(username+" : "+password);
+        return SUCCESS;
+    }
+    public String show(){
+        ActionContext.getContext().put("age",33);
         return SUCCESS;
     }
 }

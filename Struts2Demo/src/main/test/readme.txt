@@ -6,4 +6,5 @@
 4. 创建action --> 就是pojo 类
   - 4.1 为action创建exeute方法
   - 4.2 在struts.xml配置action 和返回结果集
+5. OGNL -- object graghic navgation language
 
