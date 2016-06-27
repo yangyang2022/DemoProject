@@ -55,4 +55,8 @@ public class UserAction {
         ActionContext.getContext().put("age",33);
         return SUCCESS;
     }
+    public String demo(){
+        System.out.println("demo test ... ");
+        return SUCCESS;
+    }
 }
