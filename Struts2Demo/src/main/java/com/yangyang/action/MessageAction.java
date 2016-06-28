@@ -1,5 +1,6 @@
 package com.yangyang.action;
 
+import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.yangyang.dao.MsgDao;
 import com.yangyang.model.Message;
@@ -12,7 +13,7 @@ import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
-public class MessageAction implements ModelDriven<Message>{
+public class MessageAction extends ActionSupport implements ModelDriven<Message>{
     private static final String SUCCESS = "success";
 
     //createDate -- yyyy-MM-dd
@@ -99,10 +100,21 @@ public class MessageAction implements ModelDriven<Message>{
         }
         return SUCCESS;
     }
+
+    /**
+     *在执行 add 之前都会执行 validateAdd 方法,这是服务器端验证
+     */
     public String add(){
         return SUCCESS;
     }
-
+    public void validateAdd(){
+        if(message.getId() < 0 ){
+            this.addFieldError("id","标识必须大于0");
+        }
+        if(message.getTitle() == null || "".equals(message.getTitle().trim())){
+            this.addFieldError("title","标题不能为空!");
+        }
+    }
     public String fileInput(){
         return SUCCESS;
     }

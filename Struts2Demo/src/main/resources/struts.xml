@@ -6,28 +6,44 @@
 <struts>
     <constant name="struts.action.extension" value="action,," />
     <constant name="struts.multipart.maxSize" value="10000000" />
+    <constant name="struts.custom.i18n.resources" value="Message" />
+    <constant name="struts.ui.theme" value="xhtml" />
     <package name="default" namespace="/" extends="struts-default">
         <interceptors>
             <interceptor name="helloint" class="com.yangyang.intercepter.HelloIntecepter" />
+            <interceptor name="authIntercepter" class="com.yangyang.intercepter.AuthInterceptor" />
             <interceptor-stack name="helloStack">
                 <!--defaultStack 必须要有 -->
                 <interceptor-ref name="defaultStack" />
                 <interceptor-ref name="helloint" />
             </interceptor-stack>
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="authIntercepter" />
+            </interceptor-stack>
         </interceptors>
         <!-- 全局结果集 -->
         <global-results>
             <result name="error">/WEB-INF/inc/error.jsp</result>
-        </global-results> 
-        <!-- user/common/admin_user_addInput -->
+            <result name="exception">/WEB-INF/inc/exception.jsp</result>
+            <result name="loginInput">/WEB-INF/Login/input.jsp</result>
+        </global-results>
+        <!-- 定义异常处理界面 -->
+        <global-exception-mappings>
+            <exception-mapping exception="com.yangyang.model.StrutsException" result="exception" />
+        </global-exception-mappings>
+        <!-- user/common/admin_user_addInput
+        ** 练习拦截器时使用 **
         <action name="*_*_*" class="com.yangyang.action.{2}Action" method="{3}">
+            <interceptor-ref name="authStack" />
             <result>/WEB-INF/{2}/{3}.jsp</result>
-            <result name="articleAdd" type="redirect">/user_Article_add</result>
+            <result name="redirect" type="redirect">${url}</result>
         </action>
-
+           -->
         <action name="*_*" class="com.yangyang.action.{1}Action" method="{2}">
             <interceptor-ref name="helloStack" />
             <result name="success">/WEB-INF/{1}/{2}.jsp</result>
+            <result name="input">/WEB-INF/{1}/{2}Input.jsp</result>
             <result type="redirect" name="r_list">/{1}_list</result>
         </action>
     </package>

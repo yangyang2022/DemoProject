@@ -1,4 +1,3 @@
-package com.yangyang.Test;
 
 import com.yangyang.Utils.MsgUtil;
 import org.junit.Test;

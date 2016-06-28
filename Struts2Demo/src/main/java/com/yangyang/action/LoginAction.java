@@ -31,9 +31,12 @@ public class LoginAction {
             ActionContext.getContext().getSession().put("isAdmin",true);
         }
         ActionContext.getContext().getSession().put("loginUser",username);
-        return "articleAdd";
+        ActionContext.getContext().put("url","/user_Article_add");
+        return "redirect";
     }
     public String logout(){
-        return "success";
+        ActionContext.getContext().getSession().clear();
+        ActionContext.getContext().put("url","/user_Login_input");
+        return "redirect";
     }
 }

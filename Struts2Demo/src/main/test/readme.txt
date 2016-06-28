@@ -19,3 +19,16 @@ login   --> common
 
 user/admin/commom_User_add -->
 
+** 国际化问题 **
+-- 通过不同的配置文件来指定相应的显示结果
+    -- 中文 Message_zh_CN.properties
+    -- 英文 Message_en_UK.properties
+
+** struts 的国际化
+    -- 局部国际化(很少)
+    -- 基于包的国际化方案,在action所在的包中建立对应的package_cn.properties文件
+    -- 创建 package_cn.properties / package_en.properties
+    -- 让action extends ActionSupport
+    -- 在页面中通过 <s:text name=message.id />
+    -- 在连接着中加入 ?request_locale=en
+
