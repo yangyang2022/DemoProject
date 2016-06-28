@@ -28,6 +28,7 @@
         <module name="MsgDemoProject" />
         <module name="ShopDemo" />
         <module name="SitMeshDemo" />
+        <module name="SpringDemp" />
         <module name="Struts2Demo" />
       </profile>
     </annotationProcessing>
@@ -38,11 +39,13 @@
       <module name="EmployeeManager" target="1.8" />
       <module name="FileDemo" target="1.8" />
       <module name="JSTLDemo" target="1.8" />
+      <module name="Log4jDemo" target="1.8" />
       <module name="MsgDemo" target="1.8" />
       <module name="MsgDemoProject" target="1.8" />
       <module name="Shop01" target="1.8" />
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
+      <module name="SpringDemp" target="1.8" />
       <module name="Struts2Demo" target="1.8" />
       <module name="TestServlet" target="1.5" />
     </bytecodeTargetLevel>

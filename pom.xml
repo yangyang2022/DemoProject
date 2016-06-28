@@ -16,6 +16,8 @@
         <!--<module>MsgDemoProject</module>-->
         <!--<module>Shop01</module>-->
         <module>Struts2Demo</module>
+        <module>SpringDemp</module>
+        <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
         <!--<module>SitMeshDemo</module>-->

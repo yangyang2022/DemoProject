@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/MsgDemoProject/MsgDemoProject.iml" filepath="$PROJECT_DIR$/MsgDemoProject/MsgDemoProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/ShopDemo/ShopDemo.iml" filepath="$PROJECT_DIR$/ShopDemo/ShopDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SitMeshDemo/SitMeshDemo.iml" filepath="$PROJECT_DIR$/SitMeshDemo/SitMeshDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemp/SpringDemp.iml" filepath="$PROJECT_DIR$/SpringDemp/SpringDemp.iml" />
       <module fileurl="file://$PROJECT_DIR$/Struts2Demo/Struts2Demo.iml" filepath="$PROJECT_DIR$/Struts2Demo/Struts2Demo.iml" />
     </modules>
   </component>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="userDao" class="com.yangyang.dao.UserDao" />
+    <bean id="user" class="com.yangyang.model.User" >
+        <property name="id" value="1" />
+        <property name="username" value="洋洋" />
+    </bean>
+    <!-- autowire="byName" 自动注入 -->
+    <bean id="userService" class="com.yangyang.service.UserService" >
+        <property name="userDao" ref="userDao" />
+        <property name="names">
+            <!-- 注入列表 -->
+            <list>
+                <value>aaa</value>
+                <value>bbb</value>
+                <value>ccc</value>
+                <value>ddd</value>
+            </list>
+        </property>
+    </bean>
+</beans>
