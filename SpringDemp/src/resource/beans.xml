@@ -1,13 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!-- 打开 annotation-->
     <context:annotation-config />
     <context:component-scan base-package="com.yangyang" />
-
+    <aop:aspectj-autoproxy /><!--打开基于annotation的代理-->
+    <aop:config>
+        <!--定义切面-->
+        <aop:aspect id="myLogAspect" ref="logAspectXML">
+            <!--在哪些位置 加入切面-->
+            <aop:pointcut id="logPointCut" expression="execution(* com.yangyang.dao.*.add*(..))||
+            execution(* com.yangyang.dao.*.update*(..))
+            " />
+            <aop:before method="start" pointcut-ref="logPointCut" />
+            <aop:after method="end" pointcut-ref="logPointCut" />
+            <aop:around method="round" pointcut-ref="logPointCut" />
+        </aop:aspect>
+    </aop:config>
+    <!-- factory-method 是静态属性的注入
+    <bean id="userDynamicProxy" class="com.yangyang.proxy.LoggerProxy" factory-method="getInstance">
+        <constructor-arg ref="userDao" />
+    </bean>-->
 </beans>

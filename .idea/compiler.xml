@@ -22,13 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="DemoTest" />
-        <module name="EmployeeManager" />
-        <module name="JSTLDemo" />
-        <module name="MsgDemoProject" />
-        <module name="ShopDemo" />
-        <module name="SitMeshDemo" />
         <module name="SpringDemp" />
+        <module name="SpringJDBC" />
         <module name="Struts2Demo" />
       </profile>
     </annotationProcessing>
@@ -46,6 +41,7 @@
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
       <module name="SpringDemp" target="1.8" />
+      <module name="SpringJDBC" target="1.8" />
       <module name="Struts2Demo" target="1.8" />
       <module name="TestServlet" target="1.5" />
     </bytecodeTargetLevel>

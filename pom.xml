@@ -17,6 +17,7 @@
         <!--<module>Shop01</module>-->
         <module>Struts2Demo</module>
         <module>SpringDemp</module>
+        <module>SpringJDBC</module>
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
@@ -52,8 +53,17 @@
         </dependency>
     </dependencies>
     <properties>
+
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <aspectj.version>1.8.9</aspectj.version>
+        <spring-context.version>4.3.0.RELEASE</spring-context.version>
+        <Junit-version>4.10</Junit-version>
+
+        <mysql-version>5.1.6</mysql-version>
+        <dbcp-version>1.4</dbcp-version>
+        <commons-pool-version>1.6</commons-pool-version>
     </properties>
     <repositories>
         <repository>
