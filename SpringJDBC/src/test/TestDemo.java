@@ -60,4 +60,32 @@ public class TestDemo {
         getString(list1,list2);
 
     }
+
+    @Test
+    public void testDemo2() {
+        Base base = new Child();
+        System.out.println(base.method1());
+        System.out.println(((Child)base).method1());
+        System.out.println(base.str);
+        System.out.println(((Child) base).str);
+    }
+
+    @Test
+    public void testDemo3() {
+        String path = "com.yangyang";
+        FileScan.getClasses(path).forEach(e-> System.out.println(e.getSimpleName()+":"+e.getName()));
+    }
+}
+
+class Base{
+    String str = "base str ";
+    String method1(){
+        return "base method";
+    }
+}
+class Child extends Base{
+    String str = "child str ";
+    String method1(){
+        return "child method";
+    }
 }

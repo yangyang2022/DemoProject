@@ -3,9 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoProject.iml" filepath="$PROJECT_DIR$/DemoProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HibernateDemo/HibernateDemo.iml" filepath="$PROJECT_DIR$/HibernateDemo/HibernateDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringDemp/SpringDemp.iml" filepath="$PROJECT_DIR$/SpringDemp/SpringDemp.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" filepath="$PROJECT_DIR$/SpringJDBC/SpringJDBC.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Struts2Demo/Struts2Demo.iml" filepath="$PROJECT_DIR$/Struts2Demo/Struts2Demo.iml" />
     </modules>
   </component>
 </project>
