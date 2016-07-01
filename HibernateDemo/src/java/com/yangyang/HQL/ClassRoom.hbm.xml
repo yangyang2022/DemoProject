@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yangyang.HQL">
+    <class name="ClassRoom" table="t_clz">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" />
+        <property name="grade"/>
+        <many-to-one name="speacil" column="sp_id" />
+        <set name="students" lazy="extra" inverse="true">
+            <key column="c_is" />
+            <one-to-many class="Student" />
+        </set>
+    </class>
+</hibernate-mapping>

@@ -12,7 +12,18 @@
 		<property name="hibernate.hbm2ddl.auto">update</property>
 
 		<!--<mapping class="com.yangyang.model.User" />-->
-		<mapping resource="com/yangyang/model/User.hbm.xml" />
-		<mapping resource="com/yangyang/model/Book.hbm.xml" />
+		<!--<mapping resource="com/yangyang/model/User.hbm.xml" />-->
+		<!--<mapping resource="com/yangyang/model/Book.hbm.xml" />-->
+		<mapping resource="com/yangyang/model/Student.hbm.xml" />
+		<mapping resource="com/yangyang/model/ClassRoom.hbm.xml" />
+		<mapping resource="com/yangyang/model/Comment.hbm.xml" />
+		<mapping resource="com/yangyang/model/Message.hbm.xml" />
+		<mapping resource="com/yangyang/model/Person.hbm.xml" />
+		<mapping resource="com/yangyang/model/IdCard.hbm.xml" />
+		<mapping resource="com/yangyang/model/Admin.hbm.xml" />
+		<mapping resource="com/yangyang/model/Role.hbm.xml" />
+		<mapping resource="com/yangyang/model/Teacher.hbm.xml" />
+		<mapping resource="com/yangyang/model/Course.hbm.xml" />
+		<mapping resource="com/yangyang/model/TeacherCourse.hbm.xml" />
 	</session-factory>
 </hibernate-configuration>

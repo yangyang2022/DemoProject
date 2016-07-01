@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yangyang.model">
+    <class name="Message" table="t_msg">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="title" />
+        <property name="content" />
+        <set name="comments" lazy="extra">
+            <key column="mgs_id" />
+            <one-to-many class="Comment"/>
+        </set>
+    </class>
+</hibernate-mapping>

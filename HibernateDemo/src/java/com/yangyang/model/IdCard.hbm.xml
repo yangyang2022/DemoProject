@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yangyang.model">
+    <class name="IdCard" table="t_idcard">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="no" />
+        <!-- one-2-one 和 one-2-many 类似 -->
+        <many-to-one name="person" column="pid" unique="true" />
+    </class>
+</hibernate-mapping>

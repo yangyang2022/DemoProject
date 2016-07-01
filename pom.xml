@@ -16,9 +16,10 @@
         <!--<module>MsgDemoProject</module>-->
         <!--<module>Shop01</module>-->
         <!--<module>Struts2Demo</module>-->
-        <module>SpringDemp</module>
-        <module>SpringJDBC</module>
+        <!--<module>SpringDemp</module>-->
+        <!--<module>SpringJDBC</module>-->
         <module>HibernateDemo</module>
+        <module>HibernateAnnotation</module>
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
@@ -52,8 +53,10 @@
         <hibernate-entitymanager.version>5.1.0.Final</hibernate-entitymanager.version>
         <!--<hibernate-core.version>5.2.0.Final</hibernate-core.version>
             4.3.11.Final 创建session出现问题 ,5.2.0.Final 没有问题
+            5.2.0.Final
         -->
-        <hibernate-core.version>5.2.0.Final</hibernate-core.version>
+        <hibernate-core.version>5.2.1.Final</hibernate-core.version>
+
         <!-- spring -->
         <aspectj.version>1.8.9</aspectj.version>
         <spring-context.version>4.3.0.RELEASE</spring-context.version>

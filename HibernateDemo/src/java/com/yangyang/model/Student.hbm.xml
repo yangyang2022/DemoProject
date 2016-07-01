@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yangyang.model">
+    <class name="Student" table="t_stu">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" />
+        <property name="no" />
+        <!-- 当设置cascade 会自动关联 ,但是删除时也删除了 classroom 容易报错
+            一般在 "1" 的一方使用cascade
+        -->
+        <many-to-one name="classRoom" column="cid" foreign-key="student_classromm"/>
+    </class>
+</hibernate-mapping>

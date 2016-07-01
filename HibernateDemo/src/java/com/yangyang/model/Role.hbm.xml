@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.yangyang.model">
+    <class name="Role" table="t_role">
+        <id name="id">
+            <generator class="native"/>
+        </id>
+        <property name="name" />
+        <set name="admins" table="t_admin_role" lazy="extra">
+            <key column="r_id" />
+            <many-to-many class="Admin" column="a_id" />
+        </set>
+    </class>
+</hibernate-mapping>
