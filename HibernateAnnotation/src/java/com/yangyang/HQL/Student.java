@@ -45,7 +45,7 @@ public class Student {
         this.sex = sex;
     }
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "c_id")
     public ClassRoom getClassRoom() {
         return classRoom;

@@ -4,7 +4,7 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="com.yangyang.HQL">
-    <class name="ClassRoom" table="t_clz">
+    <class name="ClassRoom" table="t_clz" batch-size="20"> <!--20 条的取-->
         <id name="id">
             <generator class="native"/>
         </id>

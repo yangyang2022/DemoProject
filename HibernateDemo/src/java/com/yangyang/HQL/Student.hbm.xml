@@ -10,6 +10,6 @@
         </id>
         <property name="name" />
         <property name="sex" />
-        <many-to-one name="classroom" column="c_id" />
+        <many-to-one name="classroom" column="c_id"/>
     </class>
 </hibernate-mapping>

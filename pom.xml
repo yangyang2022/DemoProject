@@ -56,6 +56,9 @@
             5.2.0.Final
         -->
         <hibernate-core.version>5.2.1.Final</hibernate-core.version>
+        <!-- hibernate 二级缓存 -->
+        <hibernate-ehcache.version>5.2.1.Final</hibernate-ehcache.version>
+        <ehcache.version>2.10.2</ehcache.version>
 
         <!-- spring -->
         <aspectj.version>1.8.9</aspectj.version>
