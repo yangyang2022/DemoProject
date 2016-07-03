@@ -10,13 +10,19 @@
 		<property name="hibernate.connection.password">123123</property>
 		<property name="show_sql">true</property>
 		<property name="hibernate.hbm2ddl.auto">update</property>
+
 		<!-- 开启二级缓存 ,但是hibernate没有提供二级缓存组件 常用的是echcache-->
 		<property name="hibernate.cache.use_second_level_cache">true</property>
         <!-- 设置二级缓存的类 -->
-        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory</property>
         <property name="hibernate.cache.use_query_cache">true</property>
+		<!--<property name="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</property>-->
+		<!-- 设置echcache 的位置 在类(read_only)中开启二级缓存 -->
+		<!--<property name="hibernate.cache.provider_configuration_file_resource_path">ehcache.xml</property>-->
+        <!--<property name="hibernate.cache.default_cache_concurrency_strategy">read-only</property>-->
 
-		<mapping class="com.yangyang.model.User" />
+
+        <mapping class="com.yangyang.model.User" />
 		<mapping class="com.yangyang.model.Student" />
 		<mapping class="com.yangyang.model.ClassRoom" />
 		<mapping class="com.yangyang.model.Person" />

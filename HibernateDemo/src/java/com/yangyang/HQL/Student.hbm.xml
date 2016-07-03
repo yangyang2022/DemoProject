@@ -5,6 +5,7 @@
 
 <hibernate-mapping package="com.yangyang.HQL">
     <class name="Student" table="t_stu">
+        <cache usage="read-only" region="ehcache.xml" />
         <id name="id">
             <generator class="native"/>
         </id>

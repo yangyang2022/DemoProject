@@ -7,10 +7,10 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>HibernateAnnotation</artifactId>
+    <artifactId>HibernateInAction</artifactId>
     <packaging>jar</packaging>
 
-    <name>HibernateAnnotation</name>
+    <name>HibernateInAction</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -50,6 +50,16 @@
             <artifactId>hibernate-ehcache</artifactId>
             <version>${hibernate-ehcache.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>${hibernate-validator.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-envers</artifactId>
+            <version>${hibernate-envers.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>net.sf.ehcache</groupId>
@@ -66,5 +76,6 @@
             <artifactId>slf4j-api</artifactId>
             <version>${slf4j-api.version}</version>
         </dependency>
+
     </dependencies>
 </project>

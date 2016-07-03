@@ -18,8 +18,9 @@
         <!--<module>Struts2Demo</module>-->
         <!--<module>SpringDemp</module>-->
         <!--<module>SpringJDBC</module>-->
-        <module>HibernateDemo</module>
-        <module>HibernateAnnotation</module>
+        <!--<module>HibernateDemo</module>-->
+        <!--<module>HibernateAnnotation</module>-->
+        <module>HibernateInAction</module>
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
@@ -40,7 +41,6 @@
         <!-- commons -->
         <commons-pool-version>1.6</commons-pool-version>
         <dom4j.version>1.6.1</dom4j.version>
-        <log4j.version>1.2.17</log4j.version>
 
         <!-- database -->
         <dbcp-version>1.4</dbcp-version>
@@ -56,9 +56,18 @@
             5.2.0.Final
         -->
         <hibernate-core.version>5.2.1.Final</hibernate-core.version>
+        <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
+        <hibernate-envers.version>5.2.1.Final</hibernate-envers.version>
+
         <!-- hibernate 二级缓存 -->
         <hibernate-ehcache.version>5.2.1.Final</hibernate-ehcache.version>
         <ehcache.version>2.10.2</ehcache.version>
+
+        <!-- log4j and slf4j -->
+        <log4j.version>1.2.17</log4j.version>
+        <!--<slf4j-api.version>1.7.21</slf4j-api.version>-->
+        <slf4j-log4j12.version>1.7.21</slf4j-log4j12.version>
+        <slf4j-api.version>1.7.21</slf4j-api.version>
 
         <!-- spring -->
         <aspectj.version>1.8.9</aspectj.version>
@@ -69,6 +78,7 @@
         <spring-orm.version>4.3.0.RELEASE</spring-orm.version>
     </properties>
     <repositories>
+
         <repository>
             <id>mybatis-snapshot</id>
             <name>MyBatis Snapshot Repository</name>

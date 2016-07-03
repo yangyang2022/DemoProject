@@ -4,11 +4,13 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "t_stu")
+//@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_ONLY,region = "ehcache.xml")
 public class Student {
     private int id;
     private String name;
     private String sex;
     private ClassRoom classRoom;
+    private int version;
 
     public Student() {
     }
@@ -27,6 +29,15 @@ public class Student {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    @Version
+    public int getVersion() {
+        return version;
+    }
+
+    public void setVersion(int version) {
+        this.version = version;
     }
 
     public String getName() {
