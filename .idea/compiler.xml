@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="HibernateInAction" />
+        <module name="SpringDataJPA" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -41,6 +42,7 @@
       <module name="Shop01" target="1.8" />
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
+      <module name="SpringDataJPA" target="1.8" />
       <module name="SpringDemp" target="1.8" />
       <module name="SpringJDBC" target="1.8" />
       <module name="Struts2Demo" target="1.8" />

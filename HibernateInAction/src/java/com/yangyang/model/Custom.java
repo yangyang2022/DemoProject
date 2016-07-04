@@ -2,7 +2,11 @@ package com.yangyang.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 
+@NamedQuery(name = "selectCus",query ="select c from Custom c where c.id = :id")
+@Cacheable(true)
 @Entity
 @Table(name = "t_custom")
 public class Custom {
@@ -13,6 +17,31 @@ public class Custom {
 
     private Date createTime;
     private Date born;
+
+    private Set<Order> orders ;//= new HashSet<>();
+
+    public Custom() {
+    }
+
+    public Custom(String name, String email, int age, Date createTime, Date born) {
+        this.name = name;
+        this.email = email;
+        this.age = age;
+        this.createTime = createTime;
+        this.born = born;
+    }
+
+    //默认是lazy cascade = CascadeType.REMOVE是级联删除
+    //@OneToMany(fetch = FetchType.EAGER,cascade = CascadeType.REMOVE)
+    //@JoinColumn(name = "CUSTOM_ID")
+    @OneToMany(mappedBy = "custom")
+    public Set<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
 
     //@Id
     //@TableGenerator(name = "ID_GENERATOR",table = "t_id_gen",
@@ -75,5 +104,17 @@ public class Custom {
     @Transient
     public String getInfo(){
         return "name: "+name+" ,email: "+email;
+    }
+
+    @Override
+    public String toString() {
+        return "Custom{" +
+                "born=" + born +
+                ", createTime=" + createTime +
+                ", age=" + age +
+                ", email='" + email + '\'' +
+                ", name='" + name + '\'' +
+                ", id=" + id +
+                '}';
     }
 }

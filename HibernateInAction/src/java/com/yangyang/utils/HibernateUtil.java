@@ -7,6 +7,10 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
 public class HibernateUtil {
     public static SessionFactory getSessionFactory(){
         SessionFactory sessionFactory = null;
@@ -32,6 +36,23 @@ public class HibernateUtil {
     public static void closeSession(Session session){
         if(session != null){
             session.close();
+        }
+    }
+
+    private static String persistanceUnitName = "jpa-1";
+    private static EntityManagerFactory entityFactory = Persistence.createEntityManagerFactory(persistanceUnitName);
+
+    public static EntityManager getEntityManager(){
+        return entityFactory.createEntityManager();
+    }
+
+    public static void closeEntity(EntityManager manager){
+        if(manager != null) manager.close();
+    }
+
+    public static void save(EntityManager manager,Object ...objs){
+        for(Object obj : objs){
+            manager.persist(obj);
         }
     }
 }
