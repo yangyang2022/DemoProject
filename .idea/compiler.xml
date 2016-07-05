@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="HibernateInAction" />
         <module name="SpringDataJPA" />
+        <module name="SpringMVCDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -45,6 +46,7 @@
       <module name="SpringDataJPA" target="1.8" />
       <module name="SpringDemp" target="1.8" />
       <module name="SpringJDBC" target="1.8" />
+      <module name="SpringMVCDemo" target="1.8" />
       <module name="Struts2Demo" target="1.8" />
       <module name="TestServlet" target="1.5" />
     </bytecodeTargetLevel>

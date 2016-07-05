@@ -49,7 +49,7 @@ public class Person {
     }
 
     @JoinColumn(name = "address_id")
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     public Address getAddress() {
         return address;
     }
