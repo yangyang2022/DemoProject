@@ -29,6 +29,19 @@
             <version>${commons-logging.version}</version>
         </dependency>
 
+        <!-- JSTL -->
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>${jstl.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>taglibs</groupId>
+            <artifactId>standard</artifactId>
+            <version>${standard.version}</version>
+        </dependency>
+
         <!-- commons-dbcp -->
         <dependency>
             <groupId>commons-dbcp</groupId>

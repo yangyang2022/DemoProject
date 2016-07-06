@@ -1,6 +1,7 @@
 package com.yangyang.model;
 
 public class User {
+    private int id;
 
     private String username;
     private String password;
@@ -11,12 +12,28 @@ public class User {
     public User() {
     }
 
+    public User(int id, String username, String password, String email, int age) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+        this.age = age;
+    }
+
     public User(String username, String password, String email, int age, Address address) {
         this.username = username;
         this.password = password;
         this.email = email;
         this.age = age;
         this.address = address;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Address getAddress() {
@@ -62,11 +79,11 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "username='" + username + '\'' +
+                "id=" + id +
+                ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", age=" + age +
-                ", address=" + address +
                 '}';
     }
 }
