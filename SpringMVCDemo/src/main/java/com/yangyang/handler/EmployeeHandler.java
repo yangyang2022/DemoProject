@@ -4,15 +4,17 @@ import com.yangyang.dao.DepartmentDao;
 import com.yangyang.dao.EmployeeDao;
 import com.yangyang.model.Employee;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.Valid;
 import java.util.Map;
 
 @Controller
 public class EmployeeHandler {
     private static final String SUCCESS = "success";
-    private static String REDIRECT_LISt = "redirect:/emps";
+    public static String REDIRECT_LISt = "redirect:/emps";
     @Resource
     private EmployeeDao employeeDao;
     @Resource
@@ -46,9 +48,16 @@ public class EmployeeHandler {
     }
 
     @RequestMapping(value = "/emp" ,method = RequestMethod.POST)
-    public String save(Employee employee){
-
-        employeeDao.save(employee);
+    public String save(@Valid Employee employee, BindingResult result,Map<String,Object> map){
+        System.out.println("save: "+employee);
+        if(result.getErrorCount() > 0){
+            System.out.println("出错了 !!! ");
+            result.getFieldErrors().forEach(e-> System.out.println(e.getField()+" --> "+e.getDefaultMessage()));
+            //专项自己的定制页面
+            map.put("deps",departmentDao.getDeps());
+            return "add";
+        }
+        //employeeDao.save(employee);
         return REDIRECT_LISt;
     }
 
@@ -67,4 +76,10 @@ public class EmployeeHandler {
 
         return "list";
     }
+
+    //@InitBinder
+    //public void initBinder(WebDataBinder binder){
+    //    binder.setDisallowedFields("lastName");
+    //    binder.setDisallowedFields("email");
+    //}
 }

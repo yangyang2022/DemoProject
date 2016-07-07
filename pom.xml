@@ -45,6 +45,9 @@
         <dom4j.version>1.6.1</dom4j.version>
         <commons-logging.version>1.2</commons-logging.version>
 
+        <!-- jackson -->
+        <jackson.version>2.7.5</jackson.version>
+
         <!-- JSTL -->
         <jstl.version>1.2</jstl.version>
         <standard.version>1.1.2</standard.version>
@@ -68,6 +71,9 @@
         <!-- hibernate 二级缓存 -->
         <hibernate-ehcache.version>5.2.1.Final</hibernate-ehcache.version>
         <ehcache.version>2.10.2</ehcache.version>
+
+        <!-- hibernate-validator -->
+        <hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 
         <!-- log4j and slf4j -->
         <log4j.version>1.2.17</log4j.version>
