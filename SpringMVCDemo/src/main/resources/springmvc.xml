@@ -1,50 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:mvc="http://www.springframework.org/schema/mvc"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
 		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
 
-	<!-- 配置自定扫描的包 -->
-    <context:annotation-config />
-	<context:component-scan base-package="com.yangyang" />
+    <!--
+        与springmvc 集合,主要注意个字扫描的包
+        一般情况: 类似 数据源,事物,整合其他框架都放在beans.xml中(而不是放在springmvc.xml文件中)
+        以及 dao和service 都放在ioc配置文件中
 
-	<!-- 配置视图解析器: 如何把 handler 方法返回值解析为实际的物理视图 -->
-	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/views/"></property>
-		<property name="suffix" value=".jsp"></property>
-	</bean>
+        问题:spring 和 springmvc扫描的包有重合的部分会重复创建对象(但是spring4.3好像就不重复了)
+        问题2:springmvc 和 spring 的IOC容器一样吗?
+        springmvc ioc容器里面额bean 能应用spring ioc里面的
+        反之则不行 ....
+
+    -->
+    <!-- 配置自定扫描的包 -->
+    <context:annotation-config/>
+    <!-- springmvc 只扫描这两个注解 -->
+    <context:component-scan base-package="com.yangyang" use-default-filters="false">
+        <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller" />
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice" />
+    </context:component-scan>
+
+    <!-- 配置视图解析器: 如何把 handler 方法返回值解析为实际的物理视图 -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="suffix" value=".jsp"></property>
+    </bean>
     <!-- springmvc判断 请求是否被映射过, 若果映射过则返回结果,否则直接返回资源 -->
-    <mvc:default-servlet-handler />
-    <mvc:annotation-driven />
-	<!-- 配置视图  BeanNameViewResolver 解析器: 使用视图的名字来解析视图 -->
-	<!-- 通过 order 属性来定义视图解析器的优先级, order 值越小优先级越高 -->
-	<bean id="helloView" class="org.springframework.web.servlet.view.BeanNameViewResolver">
-		<property name="order" value="100"></property>
-	</bean>
-	
-	<!-- 配置国际化资源文件 -->
-	<bean id="messageSource"
-		class="org.springframework.context.support.ResourceBundleMessageSource">
-		<property name="basename" value="i18n"></property>
-	</bean>
-	
-	<!-- 配置直接转发的页面 -->
-	<!-- 可以直接相应转发的页面, 而无需再经过 Handler 的方法.  -->
-	<mvc:view-controller path="/success" view-name="success" />
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+    <!-- 配置视图  BeanNameViewResolver 解析器: 使用视图的名字来解析视图 -->
+    <!-- 通过 order 属性来定义视图解析器的优先级, order 值越小优先级越高 -->
+    <bean id="helloView" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="100"></property>
+    </bean>
 
-	<!-- 在实际开发中通常都需配置 mvc:annotation-driven 标签 -->
-	<mvc:annotation-driven conversion-service="conversionService"/>
+    <!-- 配置国际化资源文件 -->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n"></property>
+    </bean>
 
-	<!-- 配置 ConversionService -->
-	<bean id="conversionService"
+    <!-- springmvc 配置国际化 -->
+    <!-- 配置SessionLocaleResolver -->
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver"></bean>
+
+    <!-- 配置 LocalChangeInterceptor -->
+    <mvc:interceptors>
+        <!-- 配置自定义的拦截器-->
+        <bean id="firstInterceptor" class="com.yangyang.interceptors.FirstInterceptor"/>
+        <!-- 可以配置拦截器作用的路径(不作用的路径)-->
+        <mvc:interceptor>
+            <mvc:mapping path="/emps"/>
+            <bean id="secondInterceptor" class="com.yangyang.interceptors.SecondInterceptor"/>
+        </mvc:interceptor>
+        <bean id="localeChangeInterceptor" class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
+    </mvc:interceptors>
+
+    <!-- 不经过controller 直接访问的页面-->
+    <mvc:view-controller path="i18n" view-name="i18n"/>
+    <mvc:view-controller path="i18n2" view-name="i18n2"/>
+
+    <!-- 配置multipartReslover -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="defaultEncoding" value="UTF-8"/>
+        <property name="maxUploadSize" value="1024000"/>
+    </bean>
+
+    <!-- 配置直接转发的页面 -->
+    <!-- 可以直接相应转发的页面, 而无需再经过 Handler 的方法.  -->
+    <mvc:view-controller path="/success" view-name="success"/>
+
+    <!-- 在实际开发中通常都需配置 mvc:annotation-driven 标签 -->
+    <mvc:annotation-driven conversion-service="conversionService"/>
+
+    <!-- 配置 ConversionService -->
+    <bean id="conversionService"
           class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
         <property name="converters">
             <set>
-                <ref bean="employeeConverter" />
+                <ref bean="employeeConverter"/>
             </set>
+        </property>
+    </bean>
+    <!--
+        关于国际化问题:
+            1: 根据浏览器的语言对 文本,时间,数值进行本地化处理
+            2: 可以在 bean 中获取国际化资源文件 Local 对应的消息
+            3: 可以使用超链接切换Local,不需要设置留言器语言
+                在连接着中加入 ?request_locale=en
+
+         解决办法: 1:使用jstl的fmt标签即可
+                  2: 在bean中注入ResourceBundleMessageSource的实例,使其对应相应的message(i18n的文件名)
+                  3:配置loaclResolver 和 localChangeInterceptor
+    -->
+    <!-- 配置使用simpleMappingResolver 来映射异常 -->
+    <bean id="simpleMappingExceptionResolver"
+          class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+        <property name="exceptionAttribute" value="ex"/>
+        <property name="exceptionMappings">
+            <props>
+                <prop key="java.lang.ArrayIndexOutOfBoundsException">error</prop>
+            </props>
         </property>
     </bean>
 </beans>

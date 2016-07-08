@@ -3,23 +3,35 @@ package com.yangyang.handler;
 import com.yangyang.dao.DepartmentDao;
 import com.yangyang.dao.EmployeeDao;
 import com.yangyang.model.Employee;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.validation.Valid;
+import java.util.Locale;
 import java.util.Map;
 
 @Controller
 public class EmployeeHandler {
-    private static final String SUCCESS = "success";
+    public static final String SUCCESS = "success";
     public static String REDIRECT_LISt = "redirect:/emps";
+
     @Resource
     private EmployeeDao employeeDao;
     @Resource
     private DepartmentDao departmentDao;
 
+    @Resource
+    private ResourceBundleMessageSource messageSource;
+
+    @RequestMapping("/i18n")
+    private String testI18n(Locale locale){
+        String val = messageSource.getMessage("username",null,locale);
+        System.out.println(val);
+        return "i18n";
+    }
     @RequestMapping(value = "/emp/{id}" ,method = RequestMethod.DELETE)
     public String delete(@PathVariable("id") int id){
         System.out.println("delete: "+id);
