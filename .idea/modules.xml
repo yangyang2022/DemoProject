@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/DemoProject.iml" filepath="$PROJECT_DIR$/DemoProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/HibernateInAction/HibernateInAction.iml" filepath="$PROJECT_DIR$/HibernateInAction/HibernateInAction.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringDataJPA/SpringDataJPA.iml" filepath="$PROJECT_DIR$/SpringDataJPA/SpringDataJPA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDemo/SpringDemo.iml" filepath="$PROJECT_DIR$/SpringDemo/SpringDemo.iml" />
       <module fileurl="file://$PROJECT_DIR$/SpringMVCDemo/SpringMVCDemo.iml" filepath="$PROJECT_DIR$/SpringMVCDemo/SpringMVCDemo.iml" />
     </modules>
   </component>

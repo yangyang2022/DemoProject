@@ -23,6 +23,7 @@
         <module>HibernateInAction</module>
         <module>SpringDataJPA</module>
         <module>SpringMVCDemo</module>
+        <module>SpringDemo</module>
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
@@ -97,6 +98,7 @@
         <spring-webmvc.version>4.3.0.RELEASE</spring-webmvc.version>
         <spring-tx.version>4.3.0.RELEASE</spring-tx.version>
         <spring-orm.version>4.3.0.RELEASE</spring-orm.version>
+        <spring-beans.version>4.3.0.RELEASE</spring-beans.version>
         <spring.version>4.3.0.RELEASE</spring.version>
 
         <!-- spring data -->

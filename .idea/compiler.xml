@@ -24,6 +24,7 @@
         <processorPath useClasspath="true" />
         <module name="HibernateInAction" />
         <module name="SpringDataJPA" />
+        <module name="SpringDemo" />
         <module name="SpringMVCDemo" />
       </profile>
     </annotationProcessing>
@@ -44,6 +45,7 @@
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
       <module name="SpringDataJPA" target="1.8" />
+      <module name="SpringDemo" target="1.8" />
       <module name="SpringDemp" target="1.8" />
       <module name="SpringJDBC" target="1.8" />
       <module name="SpringMVCDemo" target="1.8" />

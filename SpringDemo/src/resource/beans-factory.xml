@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        class:工厂方法全类名
+        factory-method: 指向工厂方法的名称
+        constructor-arg: 如果工厂方法需要参数,constructor-arg 来配置
+    -->
+    <!-- 通过静态方法来配置bean (不是配置静态工厂方法实例,而是bean实例) -->
+    <bean id="car1" class="com.yangyang.factory.StaticCarFactory" factory-method="getCar">
+        <constructor-arg name="name" value="audi" /> <!-- getCar的参数 -->
+    </bean>
+
+    <!-- 配置工厂的实例 -->
+    <bean id="carFactory" class="com.yangyang.factory.InstanceCarFactory" />
+    <!-- 通过实例工厂方法 来配置bean -->
+    <bean id="car2" factory-bean="carFactory" factory-method="getCar">
+        <constructor-arg name="name" value="ford" />
+    </bean>
+
+</beans>

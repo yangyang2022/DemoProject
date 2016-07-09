@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task.xsd">
+
+       <!-- 配置bean -->
+    <bean id="helloWorld" class="com.yangyang.model.HelloWorld">
+        <property name="name" value="spring" />
+    </bean>
+    <!-- 构造器注入 -->
+    <bean id="car" class="com.yangyang.model.Car">
+        <constructor-arg name="brand" value="Audi" index="0"/>
+        <constructor-arg name="corp" value="shanghai" index="1"/>
+        <constructor-arg name="price" value="1588000.00" index="2"/>
+        <constructor-arg name="maxSpeed" value="120" index="3" />
+    </bean>
+    <bean id="car2" class="com.yangyang.model.Car">
+        <constructor-arg name="brand" value="dazhong" index="0"/>
+        <constructor-arg name="corp" value="shanghai" index="1"/>
+        <constructor-arg name="price" value="1588000.00" index="2"/>
+        <constructor-arg name="maxSpeed" value="120" index="3" />
+    </bean>
+
+    <bean id="person" class="com.yangyang.model.Person">
+        <property name="name" value="yangyang" />
+        <property name="age" value="23" />
+        <!--<property name="car" ref="car" />-->
+    </bean>
+    <!-- 内部bean -->
+    <bean id="person2" class="com.yangyang.model.Person">
+        <property name="name" value="小莫" />
+        <property name="age" value="26" />
+        <!--<property name="car">-->
+            <!--<bean class="com.yangyang.model.Car">-->
+                <!--<property name="brand" value="Ford" />-->
+                <!--<property name="corp" value="shanghai" />-->
+                <!--<property name="price" value="20000.00" />-->
+                <!--<property name="maxSpeed" value="100" />-->
+            <!--</bean>-->
+        <!--</property>-->
+    </bean>
+    <bean id="person3" class="com.yangyang.model.Person">
+        <property name="name" value="小江" />
+        <property name="age" value="26" />
+        <!-- 引用赋值为null -->
+        <!--<property name="car"><null/></property>-->
+    </bean>
+
+    <bean id="yangyang" class="com.yangyang.model.Person">
+        <property name="name" value="yangyang" />
+        <property name="age" value="24" />
+        <property name="cars">
+            <list>
+                <ref bean="car" />
+                <ref bean="car2" />
+            </list>
+        </property>
+    </bean>
+    <!-- 配置properties -->
+    <bean id="dataSourcex" class="com.yangyang.model.DataSource">
+        <property name="properties">
+            <props>
+                <prop key="username">root</prop>
+                <prop key="password">123123</prop>
+                <prop key="url">jdbc:mysql:///jpa</prop>
+            </props>
+        </property>
+    </bean>
+    <!-- 配置单例的集合 ,一共多个集合bean进行引用 -->
+    <util:list id="cars">
+        <ref bean="car" />
+        <ref bean="car2" />
+    </util:list>
+    <bean id="Tom" class="com.yangyang.model.Person">
+        <property name="name" value="Tom" />
+        <property name="age" value="29" />
+        <property name="cars" ref="cars" />
+    </bean>
+    <!-- 通过P标签 命名空间赋值 ,spring3.0 之后引入的 -->
+    <bean id="jerry" class="com.yangyang.model.Person" p:name="Jerry" p:age="33" p:cars-ref="cars" />
+
+    <!-- auto wire(byName byType)-->
+    <bean id="address" class="com.yangyang.auto.Address" p:city="Beijing" p:street="Ponggezhuang"/>
+    <bean id="autocar" class="com.yangyang.auto.Car" p:brand="Baoma" p:price="123.333" />
+    <bean id="yangyang1" class="com.yangyang.auto.Person" p:name="yangyang1" p:age="24" p:address-ref="address" p:car-ref="autocar" />
+
+    <!-- bean 配置继承 在Struts整合时action 需要制定prototype -->
+    <bean id="address2" p:street="dazhongfu" parent="address" scope="prototype" />
+
+    <!--1: 配置 mysql-->
+    <context:property-placeholder location="jdbc.properties"/>
+    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${jdbc.driverClassName}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+</beans>

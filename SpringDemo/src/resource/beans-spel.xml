@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="address" class="com.yangyang.auto.Address">
+        <property name="city" value="#{'Beijing'}" />
+        <property name="street" value="#{'WuDaokou'}" />
+    </bean>
+    <!--<bean id="address" class="com.yangyang.auto.Address" p:city="Beijing" p:street="WuDaokou" />-->
+    <!-- 使用SPEL引进类的静态属性 -->
+    <bean id="car" class="com.yangyang.spel.Car" p:brand="Baoma" p:price="500000" p:tyrePrimeter="#{T(java.lang.Math).PI*80}"/>
+    <bean id="car2" class="com.yangyang.spel.Car" p:brand="Baoma" p:price="200000" p:tyrePrimeter="#{T(java.lang.Math).PI*20}"/>
+
+    <!-- 使用spel 表达式 -->
+    <bean id="person" class="com.yangyang.spel.Person" p:name="Tim" p:age="33" p:car="#{car2}"
+          p:city="#{address.city}" p:info="#{car2.price > 300000 ? '金领':'白领'}" />
+
+    <bean id="carDemo" class="com.yangyang.cycle.CarDemo" p:brand="Audi" init-method="init" destroy-method="destroy" />
+
+    <!-- 配置 bean的后置处理器 (不需要ID )-->
+    <bean class="com.yangyang.cycle.MyBeanPostProcessor" />
+
+
+</beans>
