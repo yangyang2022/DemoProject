@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <context:component-scan base-package="com.yangyang.aop.xml" />
+    <!-- 使AOP切面自动生成代理对象-->
+    <!--<aop:aspectj-autoproxy />-->
+
+    <!-- 配置AOP -->
+    <aop:config>
+        <!-- 配置切面表达式 -->
+        <aop:pointcut id="pointCut" expression="execution(* com.yangyang.aop.xml.*.*(..))" />
+
+        <!-- 配置切面及通知 -->
+        <aop:aspect id="logginAspect" order="2" ref="loggingAspect">
+            <aop:before method="beforeMethod" pointcut-ref="pointCut" />
+            <aop:after method="afterMethod" pointcut-ref="pointCut" />
+            <aop:after-throwing method="afterThrowing" pointcut-ref="pointCut" throwing="ex" />
+            <aop:after-returning method="afterRunning" pointcut-ref="pointCut" returning="result" />
+        </aop:aspect>
+
+        <aop:aspect id="validateAspect" order="1" ref="validateAspect">
+            <aop:before method="validateArgs" pointcut-ref="pointCut" />
+            <aop:after method="afterValidate" pointcut-ref="pointCut" />
+        </aop:aspect>
+    </aop:config>
+</beans>

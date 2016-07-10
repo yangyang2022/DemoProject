@@ -34,6 +34,16 @@ public class CalculatorProxy {
             public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                 System.out.println("begin [ "+method.getName()+" ]... ");
 
+                Object result = null;
+                try {
+                    //前置通知
+                    result = method.invoke(target,args);
+                    //返回通知,可以访问结果
+                } catch (Exception e) {
+                    //异常通知
+                    e.printStackTrace();
+                }
+                //后置通知
                 return method.invoke(target,args);
             }
         };
