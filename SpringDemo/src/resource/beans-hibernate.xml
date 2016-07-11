@@ -20,13 +20,18 @@
     <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
         <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="hibernate.cfg.xml" />
-        <!--<property name="mappingLocations" value="com/yangyang/hibernate/model/*.hbm.xml" />-->
-        <property name="annotatedClasses">
+        <property name="packagesToScan">
             <list>
-                <value>com.yangyang.hibernate.model.Book</value>
-                <value>com.yangyang.hibernate.model.Account</value>
+                <value>com.yangyang.hibernate.model</value>
             </list>
         </property>
+        <!--<property name="mappingLocations" value="com/yangyang/hibernate/model/*.hbm.xml" />-->
+        <!--<property name="annotatedClasses">-->
+            <!--<list>-->
+                <!--<value>com.yangyang.hibernate.model.Book</value>-->
+                <!--<value>com.yangyang.hibernate.model.Account</value>-->
+            <!--</list>-->
+        <!--</property>-->
     </bean>
 
     <!-- 3: 配置声明市事务 -->

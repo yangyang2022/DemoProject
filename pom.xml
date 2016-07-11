@@ -20,10 +20,12 @@
         <!--<module>SpringJDBC</module>-->
         <!--<module>HibernateDemo</module>-->
         <!--<module>HibernateAnnotation</module>-->
-        <module>HibernateInAction</module>
-        <module>SpringDataJPA</module>
-        <module>SpringMVCDemo</module>
-        <module>SpringDemo</module>
+        <!--<module>HibernateInAction</module>-->
+        <!--<module>SpringDataJPA</module>-->
+        <!--<module>SpringMVCDemo</module>-->
+        <!--<module>SpringDemo</module>-->
+        <module>SpringDemo1</module>
+        <module>JMSDemo</module>
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
@@ -104,6 +106,11 @@
         <!-- spring data -->
         <spring-data-commons.version>1.12.2.RELEASE</spring-data-commons.version>
         <spring-data-jpa.version>1.10.2.RELEASE</spring-data-jpa.version>
+
+        <!-- spring boot -->
+        <spring-boot.version>1.3.6.RELEASE</spring-boot.version>
+        <!-- JMS -->
+        <activemq-all.version>5.13.3</activemq-all.version>
 
     </properties>
     <repositories>

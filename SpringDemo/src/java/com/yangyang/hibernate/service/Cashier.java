@@ -1,7 +1,5 @@
 package com.yangyang.hibernate.service;
 
-import com.yangyang.tx.IBookShopService;
-import com.yangyang.tx.ICashier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

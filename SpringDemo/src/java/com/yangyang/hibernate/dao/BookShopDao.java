@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 @Repository
 public class BookShopDao implements IBookShopDao{
     String hql = "";
-    @Resource
+    @Resource(name = "sessionFactory")
     private SessionFactory sessionFactory;
 
     //获取跟当前线程绑定的session
