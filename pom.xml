@@ -20,12 +20,14 @@
         <!--<module>SpringJDBC</module>-->
         <!--<module>HibernateDemo</module>-->
         <!--<module>HibernateAnnotation</module>-->
-        <!--<module>HibernateInAction</module>-->
+        <module>HibernateInAction</module>
         <!--<module>SpringDataJPA</module>-->
         <!--<module>SpringMVCDemo</module>-->
         <!--<module>SpringDemo</module>-->
-        <module>SpringDemo1</module>
-        <module>JMSDemo</module>
+        <!--<module>SpringDemo1</module>-->
+        <!--<module>HibernateInActionDemo</module>-->
+        <module>SpringDataDemo</module>
+        <!--<module>JMSDemo</module>-->
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->

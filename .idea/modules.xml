@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DemoProject.iml" filepath="$PROJECT_DIR$/DemoProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/JMSDemo/JMSDemo.iml" filepath="$PROJECT_DIR$/JMSDemo/JMSDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringDemo1/SpringDemo1.iml" filepath="$PROJECT_DIR$/SpringDemo1/SpringDemo1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HibernateInAction/HibernateInAction.iml" filepath="$PROJECT_DIR$/HibernateInAction/HibernateInAction.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringDataDemo/SpringDataDemo.iml" filepath="$PROJECT_DIR$/SpringDataDemo/SpringDataDemo.iml" />
     </modules>
   </component>
 </project>

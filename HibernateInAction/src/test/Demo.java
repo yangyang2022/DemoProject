@@ -63,6 +63,7 @@ public class Demo {
     }
     @Test
     public void testDemo2() {
+        EntityManager manager ;
         EntityManager manger = HibernateUtil.getEntityManager();
         EntityTransaction transaction = null;
         try {

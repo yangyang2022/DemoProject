@@ -1,4 +1,4 @@
-package com.yangyang.springdata;
+package com.yangyang.dao;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

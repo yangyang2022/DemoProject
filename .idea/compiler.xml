@@ -22,8 +22,8 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="JMSDemo" />
-        <module name="SpringDemo1" />
+        <module name="HibernateInAction" />
+        <module name="SpringDataDemo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -35,6 +35,7 @@
       <module name="HibernateAnnotation" target="1.8" />
       <module name="HibernateDemo" target="1.8" />
       <module name="HibernateInAction" target="1.8" />
+      <module name="HibernateInActionDemo" target="1.8" />
       <module name="JMSDemo" target="1.8" />
       <module name="JSTLDemo" target="1.8" />
       <module name="Log4jDemo" target="1.8" />
@@ -43,6 +44,7 @@
       <module name="Shop01" target="1.8" />
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
+      <module name="SpringDataDemo" target="1.8" />
       <module name="SpringDataJPA" target="1.8" />
       <module name="SpringDemo" target="1.8" />
       <module name="SpringDemo1" target="1.8" />

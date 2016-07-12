@@ -1,4 +1,4 @@
-package com.yangyang.springdata;
+package com.yangyang.dao;
 
 public interface PersonDao {
     void test();

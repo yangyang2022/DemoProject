@@ -1,4 +1,4 @@
-package com.yangyang.springdata;
+package com.yangyang.dao;
 
 import javax.persistence.*;
 
