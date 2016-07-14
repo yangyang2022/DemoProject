@@ -20,13 +20,14 @@
         <!--<module>SpringJDBC</module>-->
         <!--<module>HibernateDemo</module>-->
         <!--<module>HibernateAnnotation</module>-->
-        <module>HibernateInAction</module>
+        <!--<module>HibernateInAction</module>-->
         <!--<module>SpringDataJPA</module>-->
         <!--<module>SpringMVCDemo</module>-->
         <!--<module>SpringDemo</module>-->
         <!--<module>SpringDemo1</module>-->
         <!--<module>HibernateInActionDemo</module>-->
-        <module>SpringDataDemo</module>
+        <!--<module>SpringDataDemo</module>-->
+        <module>SpringDataStruts</module>
         <!--<module>JMSDemo</module>-->
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
@@ -114,6 +115,9 @@
         <!-- JMS -->
         <activemq-all.version>5.13.3</activemq-all.version>
 
+        <!-- struts2 2.5.1 2.3.1-->
+        <struts2.version>2.3.1</struts2.version>
+        <javassist.version>3.12.1.GA</javassist.version>
     </properties>
     <repositories>
         <repository>

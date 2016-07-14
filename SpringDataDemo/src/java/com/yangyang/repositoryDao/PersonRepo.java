@@ -1,13 +1,20 @@
 package com.yangyang.repositoryDao;
 
 import com.yangyang.model.Person;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
-public interface PersonRepo extends CrudRepository<Person,Integer>{
+import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
+
+//CrudRepository --> pagingAndSortingRepository
+public interface PersonRepo extends
+        JpaRepository<Person,Integer>,JpaSpecificationExecutor<Person>,PersonDao {
 
     Person getByLastname(String lastname);
 
@@ -34,5 +41,10 @@ public interface PersonRepo extends CrudRepository<Person,Integer>{
 
     @Query("select p from Person p ")
     List<Person> getAll();
+
+    // update and delete --> insert into
+    @Modifying
+    @Query("update Person p set p.email = :email where p.id=:id ")
+    void updatePersonEmail(@Param("email") String email,@Param("id") Integer id);
 
 }

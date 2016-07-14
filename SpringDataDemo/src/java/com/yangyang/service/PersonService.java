@@ -1,14 +1,19 @@
 package com.yangyang.service;
 
+import com.yangyang.Iservice.IPersonService;
 import com.yangyang.model.Person;
 import com.yangyang.repositoryDao.PersonRepo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-public class PersonService implements IBaseService<Person>{
+public class PersonService implements IPersonService {
 
     @Autowired
     private PersonRepo personRepo;
@@ -16,6 +21,11 @@ public class PersonService implements IBaseService<Person>{
     @Override
     public void save(Person person) {
         personRepo.save(person);
+    }
+
+    @Override
+    public <S extends Person> Iterable<S> save(Iterable<S> entities) {
+        return null;
     }
 
     @Override
@@ -91,7 +101,34 @@ public class PersonService implements IBaseService<Person>{
     public List<Person> getPersonlike2(String lastname,String email){
         return personRepo.getPersonlike2(lastname,email);
     }
+
     public int getTotleCount(){
         return personRepo.getTotleCount();
+    }
+
+    @Transactional
+    public void updatePersonEmail(String email,Integer id){
+        personRepo.updatePersonEmail(email,id);
+    }
+
+    @Transactional
+    @Override
+    public void save(List<Person> ps) {
+        personRepo.save(ps);
+    }
+
+    @Override
+    public Page<Person> findAll(Pageable pageable) {
+        return personRepo.findAll(pageable);
+    }
+
+    @Override
+    public Page<Person> findAll(Specification<Person> spec, Pageable pageable) {
+        return personRepo.findAll(spec,pageable);
+    }
+
+    @Override
+    public void testPerson(){
+        personRepo.test();
     }
 }

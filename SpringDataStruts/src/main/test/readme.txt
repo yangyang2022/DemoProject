@@ -1,0 +1,2 @@
+ -- 1: spring 整合struts2 -- 目标:使IOC容器管理Struts2 action(这样就能使用注入)
+ -- 2: 加入配置文件 -加入struts2.jar -在web.xml里面加入filter -引入strut.xml配置文件

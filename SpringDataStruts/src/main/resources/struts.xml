@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value="action,,"/>
+    <constant name="struts.multipart.maxSize" value="10000000"/>
+    <constant name="struts.objectFactory" value="spring" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <global-results>
+            <result name="success">/WEB-INF/inc/success.jsp</result>
+            <result name="error">/WEB-INF/inc/error.jsp</result>
+        </global-results>
+        <action name="demo" class="demoAction">
+            <result>/WEB-INF/inc/success.jsp</result>
+        </action>
+        <!-- deps_list-->
+        <action name="*_*" class="{1}Action" method="{2}">
+
+            <result name="{2}">/WEB-INF/{1}/{2}.jsp</result>
+            <result name="redirect" type="redirect">${url}</result>
+
+            <result type="stream" name="ajax-success">
+                <param name="contentType">text/html</param>
+                <param name="inputName">inputStream</param>
+            </result>
+        </action>
+    </package>
+</struts>
+

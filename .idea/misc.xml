@@ -4,6 +4,48 @@
     <entry_points version="2.0" />
   </component>
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDataJPA/src/resource/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDataJPA/target/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/BeanFactory.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-anno.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-aop-xml.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-aop.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-factory.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-hibernate.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-jdbc-tx-xml.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-jdbc-tx.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-jdbc.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans-spel.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/src/resource/genericdi.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/BeanFactory.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-anno.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-aop-xml.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-aop.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-factory.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-hibernate.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-jdbc-tx-xml.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-jdbc-tx.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-jdbc.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans-spel.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo/target/classes/genericdi.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo1/src/main/resources/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo1/src/main/resources/springmvc.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo1/target/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemo1/target/classes/springmvc.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemp/src/main/test/beans-xml.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemp/src/resource/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemp/target/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringDemp/target/test-classes/beans-xml.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringJDBC/src/resource/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringJDBC/target/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/src/main/resources/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/src/main/resources/springmvc.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/classes/springmvc.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/SpringMVCDemo/WEB-INF/classes/beans.xml" />
+    <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/SpringMVCDemo/WEB-INF/classes/springmvc.xml" />
     <file type="web" url="file://$PROJECT_DIR$/DemoTest" />
     <file type="web" url="file://$PROJECT_DIR$/FileDemo" />
     <file type="web" url="file://$PROJECT_DIR$/JSTLDemo" />
@@ -11,10 +53,13 @@
     <file type="web" url="file://$PROJECT_DIR$/Shop01" />
     <file type="web" url="file://$PROJECT_DIR$/ShopDemo" />
     <file type="web" url="file://$PROJECT_DIR$/SitMeshDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringDataStruts" />
     <file type="web" url="file://$PROJECT_DIR$/SpringDemo1" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVCDemo" />
     <file type="web" url="file://$PROJECT_DIR$/Struts2Demo" />
     <file type="web" url="file://$PROJECT_DIR$/TestServlet" />
+    <type id="hibernate" />
+    <type id="jpa" />
   </component>
   <component name="MavenProjectsManager">
     <option name="originalFiles">
