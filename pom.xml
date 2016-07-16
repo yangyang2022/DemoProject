@@ -27,7 +27,10 @@
         <!--<module>SpringDemo1</module>-->
         <!--<module>HibernateInActionDemo</module>-->
         <!--<module>SpringDataDemo</module>-->
-        <module>SpringDataStruts</module>
+        <!--<module>SpringDataStruts</module>-->
+        <!--<module>JavaScriptDemo</module>-->
+        <module>ShiroDemo</module>
+        <!--<module>TempDemo</module>-->
         <!--<module>JMSDemo</module>-->
         <!--<module>Log4jDemo</module>-->
         <!--<module>FileDemo</module>-->
@@ -118,6 +121,10 @@
         <!-- struts2 2.5.1 2.3.1-->
         <struts2.version>2.3.1</struts2.version>
         <javassist.version>3.12.1.GA</javassist.version>
+
+        <!-- shiro -->
+        <shiro.version>1.2.6</shiro.version>
+
     </properties>
     <repositories>
         <repository>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+//            var bjNode = document.getElementById("bj");
+////            alert(bjNode)
+//            var lis = document.getElementsByTagName("li")
+////            alert(lis.length)
+//            var cityNode = document.getElementById("city")
+//            var cityNodeLi = cityNode.getElementsByTagName("li")
+////            alert(cityNodeLi.length)
+//            var genderNode = document.getElementsByName("gender")
+////            alert(genderNode.length)
+//            var nodeifineNode = document.getElementsByTagName("Beijing")
+////            alert(nodeifineNode)
+//
+//            var nodeName = document.getElementById("name");
+//            nodeName.value = "洋洋";
+
+            // 获取city节点的所有li子节点
+//            var cityNode = document.getElementById("city");
+////            alert(cityNode.childNodes.length)//该方式不适用,包括了空格节点
+//            var cityNodeChilds = cityNode.getElementsByTagName("li")
+////            alert(cityNodeChilds.length) //很常用
+//            alert(cityNode.firstChild)
+//            alert(cityNode.lastChild)
+
+            //获取文本节点(文本节点一定是元素节点的子节点)
+//            var bjNode = document.getElementById("bj");
+//            var bjTextNode = bjNode.firstChild;
+//            bjTextNode.nodeValue = "测试";
+//            alert(bjTextNode)
+
+
+            // 练习1 点击li节点就弹出一个对话框
+//            var liNodes = document.getElementsByTagName("li");
+//            for(var i =0;i<liNodes.length;i++){
+////                liNodes[i].onclick = function () {
+////                    alert(this.firstChild.nodeValue)
+////                }
+//                liNodes[i].onclick = function () {
+//                    alert(i)
+//                }
+//            }
+
+//            var str = "abc";
+//            var str2 = "^^abc";
+//            var reg = /^\^{2}/g;
+//            alert(reg.test(str));
+//            alert(reg.test(str2))
+//            str2 = str2.replace(reg,"");
+//            alert("str2: "+str2);
+
+//            var liNodes = document.getElementsByTagName("li");
+//            for (var i=0;i<liNodes.length;i++){
+//                liNodes[i].onclick = function () {
+//
+//                    var val = this.firstChild.nodeValue;
+//                    var regex = /^\^{2}/g;
+//                    if(regex.test(val)){
+//                        val = val.replace(regex,"");
+//                    }else{
+//                        val = "^^"+val;
+//                    }
+//                    this.firstChild.nodeValue = val;
+//                }
+//            }
+
+            //nodeType ,nodeName -readonly -- nodeValue -read-write
+            // 节点
+            var nodeBj = document.getElementById("bj");
+            alert(nodeBj.nodeName+ " -- "+nodeBj.nodeType+ " -- "+nodeBj.nodeValue);
+            //属性节点
+            var nodeAttr = document.getElementById("name").getAttributeNode("name");
+            alert(nodeAttr.nodeName+ " -- "+nodeAttr.nodeType+ " -- "+nodeAttr.nodeValue);
+            //文本节点
+            var textNode = nodeBj.firstChild
+            alert(textNode.nodeName+ " -- "+textNode.nodeType+ " -- "+textNode.nodeValue);
+        }
+    </script>
+</head>
+<body>
+    <p>你喜欢哪个城市?</p>
+    <ul id="city">
+        <li id="bj" name="Beijing">北京</li>
+        <li>上海</li>
+        <li>东京</li>
+        <li>首尔</li>
+    </ul>
+    <br/><br/>
+    <p>你喜欢那个游戏?</p>
+    <ul id="games">
+        <li id="rl">红警</li>
+        <li>实况</li>
+        <li>极品飞车</li>
+        <li>足球</li>
+    </ul>
+    <br/><br/>
+    Gender:<input type="radio" name="gender" value="男" />男
+            <input type="radio" name="gender" value="女"/>女
+    <br/><br/>
+    name:<input type="text" name="username" value="yangyang" id="name" />
+
+</body>
+</html>

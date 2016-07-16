@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 配置缓存管理器-->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+        <property name="cacheManagerConfigFile" value="classpath:ehcache-shiro.xml"/>
+    </bean>
+
+    <!-- 配置进行授权和认证的realm-->
+    <bean id="myRealm" class="com.yangyang.realm.MyRealm" />
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="cacheManager" ref="cacheManager"/>
+        <property name="realm" ref="myRealm" />
+    </bean>
+    <!-- 配置Bean的后置处理器,会自动调用和spring整合后各个组件的生命周期方法 -->
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!-- 是shiro注解起作用,shiro的注解标识在方法上 @RequireRoles,@RequirePermission -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifecycleBeanPostProcessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <!-- 这里的id必须和web.xml的filter name 一致 -->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <!-- 装配securityManager -->
+        <property name="securityManager" ref="securityManager"/>
+        <property name="loginUrl" value="shiro-login.jsp"/>
+        <property name="successUrl" value="shiro-loginsuccess.jsp"/>
+        <property name="unauthorizedUrl" value="shiro-unauthorized.jsp"/>
+        <property name="filterChainDefinitions">
+            <value>
+                /shiro-*=anon
+                /user.jsp=roles[user]
+                /admin.jsp=roles[admin]
+                /** = authc
+            </value>
+        </property>
+    </bean>
+</beans>

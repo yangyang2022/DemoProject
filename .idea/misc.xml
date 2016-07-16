@@ -48,8 +48,10 @@
     <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/SpringMVCDemo/WEB-INF/classes/springmvc.xml" />
     <file type="web" url="file://$PROJECT_DIR$/DemoTest" />
     <file type="web" url="file://$PROJECT_DIR$/FileDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/JavaScriptDemo" />
     <file type="web" url="file://$PROJECT_DIR$/JSTLDemo" />
     <file type="web" url="file://$PROJECT_DIR$/MsgDemoProject" />
+    <file type="web" url="file://$PROJECT_DIR$/ShiroDemo" />
     <file type="web" url="file://$PROJECT_DIR$/Shop01" />
     <file type="web" url="file://$PROJECT_DIR$/ShopDemo" />
     <file type="web" url="file://$PROJECT_DIR$/SitMeshDemo" />
