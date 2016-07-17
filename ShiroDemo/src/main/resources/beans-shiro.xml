@@ -9,7 +9,8 @@
     </bean>
 
     <!-- 配置进行授权和认证的realm-->
-    <bean id="myRealm" class="com.yangyang.realm.MyRealm" />
+    <bean id="myRealm" class="com.yangyang.realm.MyRealm" init-method="setCredentialsMatcher">
+    </bean>
 
     <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
         <property name="cacheManager" ref="cacheManager"/>
@@ -19,6 +20,7 @@
     <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
 
     <!-- 是shiro注解起作用,shiro的注解标识在方法上 @RequireRoles,@RequirePermission -->
+    <!-- 如果使用springmvc handler,需要把这两个bean放在IOC容器中 ,而不是放在其父容器中 -->
     <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
           depends-on="lifecycleBeanPostProcessor"/>
     <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">

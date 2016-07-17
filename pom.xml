@@ -30,6 +30,7 @@
         <!--<module>SpringDataStruts</module>-->
         <!--<module>JavaScriptDemo</module>-->
         <module>ShiroDemo</module>
+        <module>ShiroDemo2</module>
         <!--<module>TempDemo</module>-->
         <!--<module>JMSDemo</module>-->
         <!--<module>Log4jDemo</module>-->
@@ -69,6 +70,7 @@
         <dbcp-version>1.4</dbcp-version>
         <mysql-version>5.1.6</mysql-version>
         <c3p0.version>0.9.1.2</c3p0.version>
+        <druid.version>1.0.13</druid.version>
 
         <!-- mybaties -->
         <mybatis.version>3.1.1</mybatis.version>
@@ -122,7 +124,7 @@
         <struts2.version>2.3.1</struts2.version>
         <javassist.version>3.12.1.GA</javassist.version>
 
-        <!-- shiro -->
+        <!-- shiro 1.2.6 1.2.4 -->
         <shiro.version>1.2.6</shiro.version>
 
     </properties>

@@ -23,6 +23,7 @@
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
         <module name="ShiroDemo" />
+        <module name="ShiroDemo2" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -42,6 +43,7 @@
       <module name="MsgDemo" target="1.8" />
       <module name="MsgDemoProject" target="1.8" />
       <module name="ShiroDemo" target="1.8" />
+      <module name="ShiroDemo2" target="1.8" />
       <module name="Shop01" target="1.8" />
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
