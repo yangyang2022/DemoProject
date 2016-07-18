@@ -20,7 +20,6 @@ public class MapRealm implements Realm{
     public String getName() {
         return "mapRealm";
     }
-
     @Override
     public boolean supports(AuthenticationToken token) {
         return token instanceof UsernamePasswordToken;

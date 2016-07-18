@@ -1,34 +1,62 @@
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.IncorrectCredentialsException;
-import org.apache.shiro.authc.UnknownAccountException;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.config.IniSecurityManagerFactory;
-import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.subject.Subject;
 import org.junit.Test;
 
+import java.util.Arrays;
+
+import static com.yangyang.utils.ShiroUtile.login;
+
 public class TestBanse {
+
 
     @Test
     public void testDemo() {
-        SecurityManager manager = new IniSecurityManagerFactory("classpath:shiro.ini").getInstance();
-        SecurityUtils.setSecurityManager(manager);
+        Subject subject = login("kh","123");
 
-        Subject subject = SecurityUtils.getSubject();
+        PrincipalCollection ps = subject.getPrincipals();
+        System.out.println(ps.asList());
+        System.out.println(ps.getRealmNames());
+        System.out.println(subject.getPrincipal());
 
-        UsernamePasswordToken token = new UsernamePasswordToken("admin","admin");
-        try {
-            subject.login(token);
-            PrincipalCollection ps = subject.getPrincipals();
-            System.out.println(ps.asList().size());
-            System.out.println(ps.getRealmNames());
-            System.out.println(subject.getPrincipal().toString());
+    }
 
-        } catch (UnknownAccountException e) {
-            System.err.println("用户名不存在!");
-        }catch (IncorrectCredentialsException e){
-            System.err.println("密码不正确!");
-        }
+    @Test
+    public void testRole() {
+        Subject subject = login("kh", "123");
+        System.out.println(subject.hasRole("r3"));
+        System.out.println(subject.hasAllRoles(Arrays.asList("r1","r2","r3")));
+        System.out.println((subject.hasRoles(Arrays.asList("r1","r2","r3")))[0]);
+
+        subject.checkRole("r3");
+
+    }
+
+    @Test
+    public void testRole2() {
+        Subject subject = login("kh", "123");
+        System.out.println(subject.isPermitted("user:query"));
+        System.out.println(subject.isPermitted("topic:xada"));
+        System.out.println(subject.isPermitted("dep:delete"));
+        System.out.println(subject.isPermitted("classroom:delete"));
+    }
+
+    @Test
+    public void testRole3() {
+        Subject subject = login("lisi", "lisi");
+        System.out.println(subject.isPermitted("admin:dep:delete"));
+        System.out.println(subject.isPermitted("cao:view"));
+        System.out.println(subject.isPermitted("test:user:view"));
+    }
+
+    @Test
+    public void testMyPermission() {
+        Subject subject = login("kh", "123");
+        System.out.println(subject.isPermitted("+topic+ads"));
+    }
+
+    @Test
+    public void test() {
+        int num = 123;
+        System.out.println((new StringBuilder(num+"")).reverse());
     }
 }

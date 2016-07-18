@@ -1,7 +1,9 @@
 package com.yangyang.realm;
 
+import com.yangyang.permission.MyPermission;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
+import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.authz.UnauthenticatedException;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
@@ -12,7 +14,16 @@ public class StaticRealm extends AuthorizingRealm{
      */
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
-        return null;
+
+        SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+        info.addRole("r1");
+        info.addRole("r2");
+
+        info.addStringPermission("+user+*");
+        info.addObjectPermission(new MyPermission("+topic+create"));
+        info.addObjectPermission(new MyPermission("+topic+update"));
+
+        return info;
     }
 
     /**
