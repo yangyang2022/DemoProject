@@ -1,6 +1,6 @@
 package com.yangyang.service;
 
-import com.yangyang.dao.IUserDao;
+import com.yangyang.model.IUserDao;
 import com.yangyang.model.User;
 import org.springframework.stereotype.Service;
 

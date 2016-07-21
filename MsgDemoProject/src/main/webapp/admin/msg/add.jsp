@@ -1,4 +1,4 @@
-<%@ page import="com.yangyang.dao.IMessageDao" %>
+<%@ page import="com.yangyang.model.IMessageDao" %>
 <%@ page import="DaoFactory" %>
 <%@ page import="com.yangyang.mode.Message" %>
 <%@ page import="java.util.Date" %>

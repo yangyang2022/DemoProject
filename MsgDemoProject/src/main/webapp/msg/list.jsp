@@ -1,9 +1,9 @@
-<%@ page import="com.yangyang.dao.ICommentDao" %>
+<%@ page import="com.yangyang.model.ICommentDao" %>
 <%@ page import="DaoFactory" %>
 <%@ page import="com.yangyang.mode.Pager" %>
 <%@ page import="com.yangyang.mode.Comment" %>
 <%@ page import="com.yangyang.mode.Message" %>
-<%@ page import="com.yangyang.dao.IMessageDao" %>
+<%@ page import="com.yangyang.model.IMessageDao" %>
 <%@ page import="java.util.List" %>
 <%@ page import="com.yangyang.Utils.MsgUtil" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

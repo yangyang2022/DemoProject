@@ -1,5 +1,5 @@
 <%@ page import="User" %>
-<%@ page import="com.yangyang.dao.IMessageDao" %>
+<%@ page import="com.yangyang.model.IMessageDao" %>
 <%@ page import="DaoFactory" %>
 <%@ page import="com.yangyang.mode.Message" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>

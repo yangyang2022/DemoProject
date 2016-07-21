@@ -1,7 +1,7 @@
-import com.yangyang.dao.BaseDao;
-import com.yangyang.dao.ICategoryDao;
-import com.yangyang.dao.IProductDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.BaseDao;
+import com.yangyang.model.ICategoryDao;
+import com.yangyang.model.IProductDao;
+import com.yangyang.model.ShopDI;
 import com.yangyang.model.Category;
 import com.yangyang.model.Product;
 import org.junit.Test;

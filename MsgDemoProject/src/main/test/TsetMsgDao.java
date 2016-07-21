@@ -1,7 +1,7 @@
 package com.yangyang.Test;
 
-import com.yangyang.dao.IMessageDao;
-import com.yangyang.dao.MessageDao;
+import com.yangyang.model.IMessageDao;
+import com.yangyang.model.MessageDao;
 import com.yangyang.mode.Message;
 import com.yangyang.mode.Pager;
 import org.junit.Before;

@@ -1,5 +1,5 @@
-import com.yangyang.dao.UserDao;
-import com.yangyang.dao.UserService;
+import com.yangyang.model.UserDao;
+import com.yangyang.model.UserService;
 import org.junit.Test;
 
 public class TestLog4j {

@@ -22,8 +22,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="ShiroDemo" />
-        <module name="ShiroDemo2" />
+        <module name="SpringHibernateStruts" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -44,6 +43,7 @@
       <module name="MsgDemoProject" target="1.8" />
       <module name="ShiroDemo" target="1.8" />
       <module name="ShiroDemo2" target="1.8" />
+      <module name="ShiroDemo3" target="1.8" />
       <module name="Shop01" target="1.8" />
       <module name="ShopDemo" target="1.8" />
       <module name="SitMeshDemo" target="1.8" />
@@ -53,8 +53,10 @@
       <module name="SpringDemo" target="1.8" />
       <module name="SpringDemo1" target="1.8" />
       <module name="SpringDemp" target="1.8" />
+      <module name="SpringHibernateStruts" target="1.8" />
       <module name="SpringJDBC" target="1.8" />
       <module name="SpringMVCDemo" target="1.8" />
+      <module name="SSHDemo1" target="1.8" />
       <module name="Struts2Demo" target="1.8" />
       <module name="TempDemo" target="1.8" />
       <module name="TestServlet" target="1.5" />

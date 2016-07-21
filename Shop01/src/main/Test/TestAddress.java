@@ -1,6 +1,6 @@
 import com.yangyang.Utils.DBUtils;
-import com.yangyang.dao.IAddressDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.IAddressDao;
+import com.yangyang.model.ShopDI;
 import com.yangyang.model.Address;
 import org.junit.Test;
 

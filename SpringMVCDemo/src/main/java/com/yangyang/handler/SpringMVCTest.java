@@ -1,7 +1,7 @@
 package com.yangyang.handler;
 
 import com.yangyang.StaticUtils.StaticValues;
-import com.yangyang.dao.EmployeeDao;
+import com.yangyang.model.EmployeeDao;
 import com.yangyang.exception.UsernameNotMatchPassword;
 import com.yangyang.model.Employee;
 import com.yangyang.service.UserService;

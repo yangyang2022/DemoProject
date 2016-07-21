@@ -1,5 +1,5 @@
-import com.yangyang.dao.IGroupDao;
-import com.yangyang.dao.IUserDao;
+import com.yangyang.model.IGroupDao;
+import com.yangyang.model.IUserDao;
 import com.yangyang.model.Group;
 import com.yangyang.model.User;
 import org.junit.Test;

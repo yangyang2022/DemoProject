@@ -1,3 +1,4 @@
+<%@ page import="org.apache.shiro.web.util.WebUtils" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 

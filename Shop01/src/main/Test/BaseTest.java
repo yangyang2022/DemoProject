@@ -1,4 +1,4 @@
-import com.yangyang.dao.DaoFactory;
+import com.yangyang.model.DaoFactory;
 
 public class BaseTest {
     public BaseTest(){

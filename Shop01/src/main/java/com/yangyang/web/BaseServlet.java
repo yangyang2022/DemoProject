@@ -1,6 +1,6 @@
 package com.yangyang.web;
 
-import com.yangyang.dao.DaoFactory;
+import com.yangyang.model.DaoFactory;
 import com.yangyang.model.User;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 

@@ -1,4 +1,4 @@
-import com.yangyang.dao.IUserDao;
+import com.yangyang.model.IUserDao;
 import com.yangyang.model.User;
 import com.yangyang.service.IUserService;
 import org.junit.Test;

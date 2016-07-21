@@ -1,4 +1,4 @@
-<%@ page import="com.yangyang.dao.ICommentDao" %>
+<%@ page import="com.yangyang.model.ICommentDao" %>
 <%@ page import="DaoFactory" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 

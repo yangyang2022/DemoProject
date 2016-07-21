@@ -53,12 +53,15 @@
     <file type="web" url="file://$PROJECT_DIR$/MsgDemoProject" />
     <file type="web" url="file://$PROJECT_DIR$/ShiroDemo" />
     <file type="web" url="file://$PROJECT_DIR$/ShiroDemo2" />
+    <file type="web" url="file://$PROJECT_DIR$/ShiroDemo3" />
     <file type="web" url="file://$PROJECT_DIR$/Shop01" />
     <file type="web" url="file://$PROJECT_DIR$/ShopDemo" />
     <file type="web" url="file://$PROJECT_DIR$/SitMeshDemo" />
     <file type="web" url="file://$PROJECT_DIR$/SpringDataStruts" />
     <file type="web" url="file://$PROJECT_DIR$/SpringDemo1" />
+    <file type="web" url="file://$PROJECT_DIR$/SpringHibernateStruts" />
     <file type="web" url="file://$PROJECT_DIR$/SpringMVCDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/SSHDemo1" />
     <file type="web" url="file://$PROJECT_DIR$/Struts2Demo" />
     <file type="web" url="file://$PROJECT_DIR$/TestServlet" />
     <type id="hibernate" />

@@ -1,5 +1,5 @@
-import com.yangyang.dao.CommentDao;
-import com.yangyang.dao.ICommentDao;
+import com.yangyang.model.CommentDao;
+import com.yangyang.model.ICommentDao;
 import com.yangyang.mode.Comment;
 import org.junit.Before;
 import org.junit.Test;

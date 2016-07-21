@@ -1,5 +1,5 @@
-import com.yangyang.dao.IUserDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.IUserDao;
+import com.yangyang.model.ShopDI;
 import org.junit.Test;
 
 public class TestUserDaoDemo extends BaseTest{

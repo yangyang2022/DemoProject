@@ -1,6 +1,6 @@
 package com.yangyang.web;
 
-import com.yangyang.Utils.RequestUtils;import com.yangyang.dao.IUserDao;import com.yangyang.dao.ShopDI;import com.yangyang.model.Pager;import com.yangyang.model.ShopException;
+import com.yangyang.Utils.RequestUtils;import com.yangyang.model.IUserDao;import com.yangyang.model.ShopDI;import com.yangyang.model.Pager;import com.yangyang.model.ShopException;
 import com.yangyang.model.User;
 
 import javax.servlet.annotation.WebServlet;

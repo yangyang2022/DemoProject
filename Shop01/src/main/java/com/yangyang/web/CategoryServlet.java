@@ -1,8 +1,8 @@
 package com.yangyang.web;
 
 import com.yangyang.Utils.RequestUtils;
-import com.yangyang.dao.ICategoryDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.ICategoryDao;
+import com.yangyang.model.ShopDI;
 import com.yangyang.model.Category;
 import com.yangyang.model.ShopException;
 

@@ -17,8 +17,8 @@
         <!--定义切面-->
         <aop:aspect id="myLogAspect" ref="logAspectXML">
             <!--在哪些位置 加入切面-->
-            <aop:pointcut id="logPointCut" expression="execution(* com.yangyang.dao.*.add*(..))||
-            execution(* com.yangyang.dao.*.update*(..))
+            <aop:pointcut id="logPointCut" expression="execution(* com.yangyang.model.*.add*(..))||
+            execution(* com.yangyang.model.*.update*(..))
             " />
             <aop:before method="start" pointcut-ref="logPointCut" />
             <aop:after method="end" pointcut-ref="logPointCut" />

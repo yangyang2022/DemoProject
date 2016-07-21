@@ -1,4 +1,4 @@
-package com.yangyang.dao;
+package com.yangyang.model;
 
 public class DaoFactory {
     public static IUserDao getUserDao(){

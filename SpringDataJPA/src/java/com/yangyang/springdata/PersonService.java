@@ -1,4 +1,4 @@
-package com.yangyang.dao;
+package com.yangyang.model;
 
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

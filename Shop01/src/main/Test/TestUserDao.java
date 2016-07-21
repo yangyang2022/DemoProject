@@ -1,7 +1,7 @@
 import com.yangyang.Utils.MyBatisUtil;
 import com.yangyang.Utils.NameUtil;
-import com.yangyang.dao.IUserDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.IUserDao;
+import com.yangyang.model.ShopDI;
 import com.yangyang.model.Pager;
 import com.yangyang.model.SystemContext;
 import com.yangyang.model.User;

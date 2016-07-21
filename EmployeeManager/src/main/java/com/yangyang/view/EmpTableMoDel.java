@@ -1,7 +1,7 @@
 package com.yangyang.view;
 
-import com.yangyang.dao.DepDao;
-import com.yangyang.dao.EmpDao;
+import com.yangyang.model.DepDao;
+import com.yangyang.model.EmpDao;
 import com.yangyang.model.Emp;
 
 import javax.swing.table.AbstractTableModel;

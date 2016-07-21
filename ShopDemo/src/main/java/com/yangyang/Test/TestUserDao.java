@@ -1,7 +1,7 @@
 package com.yangyang.Test;
 
-import com.yangyang.dao.IUserDao;
-import com.yangyang.dao.DaoFactory;
+import com.yangyang.model.IUserDao;
+import com.yangyang.model.DaoFactory;
 import com.yangyang.mode.User;
 import org.junit.Before;
 import org.junit.Test;

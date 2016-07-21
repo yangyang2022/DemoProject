@@ -29,8 +29,11 @@
         <!--<module>SpringDataDemo</module>-->
         <!--<module>SpringDataStruts</module>-->
         <!--<module>JavaScriptDemo</module>-->
-        <module>ShiroDemo</module>
-        <module>ShiroDemo2</module>
+        <!--<module>ShiroDemo</module>-->
+        <!--<module>ShiroDemo2</module>-->
+        <!--<module>ShiroDemo3</module>-->
+        <module>SpringHibernateStruts</module>
+        <!--<module>SSHDemo1</module>-->
         <!--<module>TempDemo</module>-->
         <!--<module>JMSDemo</module>-->
         <!--<module>Log4jDemo</module>-->
@@ -46,6 +49,10 @@
 
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
+
+        <!-- servlet and jsp -->
+        <javax.servlet.version>2.3.1</javax.servlet.version>
+        <jsp.version>3.1.0</jsp.version>
 
         <!-- junit test -->
         <Junit-version>4.12</Junit-version>

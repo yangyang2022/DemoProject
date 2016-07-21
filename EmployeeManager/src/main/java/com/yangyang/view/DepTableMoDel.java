@@ -1,6 +1,6 @@
 package com.yangyang.view;
 
-import com.yangyang.dao.DepDao;
+import com.yangyang.model.DepDao;
 import com.yangyang.model.Dep;
 
 import javax.swing.table.AbstractTableModel;

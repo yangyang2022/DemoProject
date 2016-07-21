@@ -2,7 +2,7 @@ package com.yangyang.action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
-import com.yangyang.dao.MsgDao;
+import com.yangyang.model.MsgDao;
 import com.yangyang.model.Message;
 import com.yangyang.model.PointDemo;
 import org.apache.commons.beanutils.BeanUtils;

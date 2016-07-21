@@ -1,7 +1,7 @@
-import com.yangyang.dao.Address;
-import com.yangyang.dao.Person;
-import com.yangyang.dao.PersonRepositry;
-import com.yangyang.dao.PersonService;
+import com.yangyang.model.Address;
+import com.yangyang.model.Person;
+import com.yangyang.model.PersonRepositry;
+import com.yangyang.model.PersonService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

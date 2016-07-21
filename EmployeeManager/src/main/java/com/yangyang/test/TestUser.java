@@ -1,8 +1,8 @@
 package com.yangyang.test;
 
-import com.yangyang.dao.DepDao;
-import com.yangyang.dao.EmpDao;
-import com.yangyang.dao.UserDao;
+import com.yangyang.model.DepDao;
+import com.yangyang.model.EmpDao;
+import com.yangyang.model.UserDao;
 import com.yangyang.model.Dep;
 import com.yangyang.model.Emp;
 import com.yangyang.model.User;

@@ -1,7 +1,7 @@
 package com.yangyang.handler;
 
-import com.yangyang.dao.DepartmentDao;
-import com.yangyang.dao.EmployeeDao;
+import com.yangyang.model.DepartmentDao;
+import com.yangyang.model.EmployeeDao;
 import com.yangyang.model.Employee;
 import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.stereotype.Controller;

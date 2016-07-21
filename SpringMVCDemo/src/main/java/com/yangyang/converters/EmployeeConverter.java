@@ -1,6 +1,6 @@
 package com.yangyang.converters;
 
-import com.yangyang.dao.DepartmentDao;
+import com.yangyang.model.DepartmentDao;
 import com.yangyang.model.Department;
 import com.yangyang.model.Employee;
 import org.springframework.core.convert.converter.Converter;

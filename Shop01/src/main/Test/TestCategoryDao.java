@@ -1,5 +1,5 @@
-import com.yangyang.dao.ICategoryDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.ICategoryDao;
+import com.yangyang.model.ShopDI;
 import com.yangyang.model.Category;
 import org.junit.Test;
 

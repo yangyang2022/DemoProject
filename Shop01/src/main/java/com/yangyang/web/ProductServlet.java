@@ -1,9 +1,9 @@
 package com.yangyang.web;
 
 import com.yangyang.Utils.RequestUtils;
-import com.yangyang.dao.ICategoryDao;
-import com.yangyang.dao.IProductDao;
-import com.yangyang.dao.ShopDI;
+import com.yangyang.model.ICategoryDao;
+import com.yangyang.model.IProductDao;
+import com.yangyang.model.ShopDI;
 import com.yangyang.model.Product;
 
 import javax.servlet.annotation.WebServlet;

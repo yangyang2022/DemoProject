@@ -1,5 +1,5 @@
 import com.yangyang.Utils.HibernateUtil;
-import com.yangyang.dao.UserDao;
+import com.yangyang.model.UserDao;
 import com.yangyang.model.User;
 import org.hibernate.Session;
 import org.junit.Test;

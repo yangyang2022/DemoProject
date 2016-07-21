@@ -1,7 +1,7 @@
 package com.yangyang.view;
 
 import com.yangyang.Utils.EmpUtil;
-import com.yangyang.dao.UserDao;
+import com.yangyang.model.UserDao;
 import com.yangyang.model.EmpException;
 
 import javax.swing.*;

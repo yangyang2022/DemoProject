@@ -1,4 +1,4 @@
-package com.yangyang.dao;
+package com.yangyang.model;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

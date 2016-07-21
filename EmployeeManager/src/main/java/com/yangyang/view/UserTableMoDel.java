@@ -1,6 +1,6 @@
 package com.yangyang.view;
 
-import com.yangyang.dao.UserDao;
+import com.yangyang.model.UserDao;
 import com.yangyang.model.User;
 
 import javax.swing.table.AbstractTableModel;
