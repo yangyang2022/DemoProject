@@ -6,15 +6,26 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>Stuts2Demo</artifactId>
+    <artifactId>StrutsDemo2</artifactId>
     <packaging>war</packaging>
-    <name>Stuts2Demo Maven Webapp</name>
+    <name>StrutsDemo2 Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
+        <!-- servlet and jsp -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>${javax.servlet.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>${jsp.version}</version>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.10</version>
+            <version>${Junit-version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -27,8 +38,9 @@
             <artifactId>commons-beanutils</artifactId>
             <version>${commons-beanutils.version}</version>
         </dependency>
+
     </dependencies>
     <build>
-        <finalName>Stuts2Demo</finalName>
+        <finalName>StrutsDemo2</finalName>
     </build>
 </project>

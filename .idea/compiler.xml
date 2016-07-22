@@ -38,6 +38,7 @@
       <module name="JavaScriptDemo" target="1.8" />
       <module name="JMSDemo" target="1.8" />
       <module name="JSTLDemo" target="1.8" />
+      <module name="JunitDemo" target="1.8" />
       <module name="Log4jDemo" target="1.8" />
       <module name="MsgDemo" target="1.8" />
       <module name="MsgDemoProject" target="1.8" />
@@ -58,6 +59,7 @@
       <module name="SpringMVCDemo" target="1.8" />
       <module name="SSHDemo1" target="1.8" />
       <module name="Struts2Demo" target="1.8" />
+      <module name="StrutsDemo2" target="1.8" />
       <module name="TempDemo" target="1.8" />
       <module name="TestServlet" target="1.5" />
     </bytecodeTargetLevel>

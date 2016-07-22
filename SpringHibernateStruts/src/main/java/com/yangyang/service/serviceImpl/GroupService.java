@@ -2,6 +2,7 @@ package com.yangyang.service.serviceImpl;
 
 import com.yangyang.dao.idao.IGroupDao;
 import com.yangyang.dao.idao.IUserDao;
+import com.yangyang.exception.UserException;
 import com.yangyang.model.Group;
 import com.yangyang.service.iservice.IGroupService;
 import org.springframework.stereotype.Service;
@@ -30,11 +31,11 @@ public class GroupService implements IGroupService{
 
     @Override
     public void delete(int id) {
-        //long count = userDao.countUserByGroupId(id);
-        //if(count > 0){
-        //    throw new UserException("改组还有用户,不能删除!");
-        //}
-        userDao.deleteByGroupId(id);
+        long count = userDao.countUserByGroupId(id);
+        if(count > 0){
+            throw new UserException("改组还有用户,不能删除!");
+        }
+        //userDao.deleteByGroupId(id);
 
         groupDao.delete(id);
     }

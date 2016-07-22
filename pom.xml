@@ -33,6 +33,7 @@
         <!--<module>ShiroDemo2</module>-->
         <!--<module>ShiroDemo3</module>-->
         <module>SpringHibernateStruts</module>
+        <!--<module>StrutsDemo2</module>-->
         <!--<module>SSHDemo1</module>-->
         <!--<module>TempDemo</module>-->
         <!--<module>JMSDemo</module>-->
@@ -61,6 +62,8 @@
         <commons-pool-version>1.6</commons-pool-version>
         <dom4j.version>1.6.1</dom4j.version>
         <commons-logging.version>1.2</commons-logging.version>
+        <commons-beanutils.version>1.9.2</commons-beanutils.version>
+        <commons-lang3.version>3.4</commons-lang3.version>
 
         <!-- commons FileUpload -->
         <commons-io.version>2.5</commons-io.version>

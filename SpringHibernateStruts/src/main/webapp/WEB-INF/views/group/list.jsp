@@ -7,8 +7,9 @@
 </head>
 <body>
     <s:iterator value="#gs">
-        ${id} -- <a href="group_show?cid=${id}">${groupName}</a>
-        -- <a href="group_delete?cid=${id}">删除</a>
+        ${id} -- <a href="group_show?id=${id}">${groupName}</a>
+        -- <a href="group_delete?id=${id}">删除</a>&nbsp;
+        -- <a href="group_updateInput?id=${id}">更新</a>&nbsp;
         <br/>
     </s:iterator>
 </body>

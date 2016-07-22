@@ -4,6 +4,7 @@ import com.yangyang.dao.idao.IGroupDao;
 import com.yangyang.dao.idao.IUserDao;
 import com.yangyang.exception.UserException;
 import com.yangyang.model.Group;
+import com.yangyang.model.Pager;
 import com.yangyang.model.User;
 import com.yangyang.service.iservice.IUserService;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,16 @@ public class UserService implements IUserService{
     }
 
     @Override
+    public void update(User user, int gid) {
+        Group g = groupDao.load(gid);
+        if(g == null){
+            throw new UserException("添加用户的组不存在!");
+        }
+        user.setGroup(g);
+        userDao.update(user);
+    }
+
+    @Override
     public void add(User user) {
         userDao.add(user);
     }
@@ -51,11 +62,17 @@ public class UserService implements IUserService{
 
     @Override
     public List<User> listAll() {
-        return userDao.list("from User");
+        return userDao.list("from User u left join fetch u.group");
     }
 
     @Override
     public List<User> listByGroupId(int gid) {
         return userDao.list("select u from User u where u.group.id=?",gid);
+    }
+
+    @Override
+    public Pager<User> findUser() {
+        String sql = "from User u left join fetch u.group";
+        return userDao.find(sql);
     }
 }

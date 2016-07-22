@@ -47,14 +47,47 @@ public class GroupAction extends ActionSupport implements ModelDriven<Group> {
     }
 
     public String show(){
-        group = groupService.load(cid);
+        group = groupService.load(group.getId());
         return SUCCESS;
     }
     public String delete(){
-        groupService.delete(cid);
-        ActionContext.getContext().put("url",GROUP_LIST);
 
+        groupService.delete(group.getId());
+
+        ActionContext.getContext().put("url",GROUP_LIST);
         return REDIRECT;
+    }
+
+    public String updateInput(){
+        Group tg = groupService.load(group.getId());
+        group.setGroupName(tg.getGroupName());
+        return SUCCESS;
+    }
+    public String update(){
+
+        groupService.update(group);
+
+        ActionContext.getContext().put("url",GROUP_LIST);
+        return REDIRECT;
+    }
+    public String addInput(){
+        return SUCCESS;
+    }
+    public String add(){
+
+        groupService.add(group);
+
+        ActionContext.getContext().put("url",GROUP_LIST);
+        return REDIRECT;
+    }
+
+    /**
+     * 服务器端验证
+     */
+    public void validateAdd(){
+        if(group.getGroupName() == null || "".equals(group.getGroupName().trim())){
+            this.addFieldError("groupName","组名称不能为空!");
+        }
     }
     @Override
     public Group getModel() {

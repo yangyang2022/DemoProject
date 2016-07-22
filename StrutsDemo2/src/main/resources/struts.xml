@@ -6,25 +6,23 @@
 <struts>
     <constant name="struts.action.extension" value="action,,"/>
     <constant name="struts.multipart.maxSize" value="10000000"/>
-    <constant name="struts.objectFactory" value="spring" />
+    <!--<constant name="struts.objectFactory" value="spring" />-->
 
     <package name="default" namespace="/" extends="struts-default">
 
-        <global-results>
-            <result name="success">/WEB-INF/views/inc/success.jsp</result>
-            <result name="error">/WEB-INF/views/inc/error.jsp</result>
-            <result name="exception">/WEB-INF/views/inc/exception.jsp</result>
-        </global-results>
+        <!--<global-results>-->
+            <!--<result name="success">/WEB-INF/views/inc/success.jsp</result>-->
+            <!--<result name="error">/WEB-INF/views/inc/error.jsp</result>-->
+        <!--</global-results>-->
 
         <global-exception-mappings>
             <exception-mapping exception="com.yangyang.exception.UserException" result="exception" />
         </global-exception-mappings>
 
         <!-- deps_list spring class -->
-        <action name="*_*" class="{1}Action" method="{2}">
+        <action name="*_*" class="com.yangyang.action.{1}Action" method="{2}">
             <result>/WEB-INF/views/{1}/{2}.jsp</result>
             <result name="redirect" type="redirect">/${url}</result>
-            <result name="input">/WEB-INF/views/{1}/{2}Input.jsp</result>
         </action>
     </package>
 </struts>

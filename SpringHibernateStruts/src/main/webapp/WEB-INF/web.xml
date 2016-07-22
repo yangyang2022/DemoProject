@@ -15,6 +15,21 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+    <!-- 编码过滤器 -->
+    <filter>
+        <filter-name>characterEncodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+    <filter-mapping>
+        <filter-name>characterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
     <!-- open session in view -->
     <filter>
         <filter-name>SpringOpenSessionInViewFilter</filter-name>
@@ -25,6 +40,17 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+    <!-- systemContextFilter -->
+    <filter>
+        <filter-name>SystemContextFilter</filter-name>
+        <filter-class>com.yangyang.filter.SystomContextFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>SystemContextFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- struts2 filter -->
     <filter>
         <filter-name>struts2</filter-name>
         <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>

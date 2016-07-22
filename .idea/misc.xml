@@ -63,6 +63,7 @@
     <file type="web" url="file://$PROJECT_DIR$/SpringMVCDemo" />
     <file type="web" url="file://$PROJECT_DIR$/SSHDemo1" />
     <file type="web" url="file://$PROJECT_DIR$/Struts2Demo" />
+    <file type="web" url="file://$PROJECT_DIR$/StrutsDemo2" />
     <file type="web" url="file://$PROJECT_DIR$/TestServlet" />
     <type id="hibernate" />
     <type id="jpa" />
@@ -75,6 +76,7 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/JunitDemo/pom.xml" />
         <option value="$PROJECT_DIR$/MsgDemo/pom.xml" />
         <option value="$PROJECT_DIR$/TestServlet/pom.xml" />
       </set>
