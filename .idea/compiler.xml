@@ -22,11 +22,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
+        <module name="Core-javaTest" />
         <module name="SpringHibernateStruts" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Core-java" target="1.8" />
+      <module name="Core-javaTest" target="1.8" />
       <module name="DemoProject" target="1.8" />
       <module name="DemoTest" target="1.8" />
       <module name="EmployeeManager" target="1.8" />

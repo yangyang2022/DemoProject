@@ -1,6 +1,9 @@
 import org.junit.Test;
+import org.springframework.util.StringUtils;
 
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.List;
 
 public class testSpringDemo {
     
@@ -9,7 +12,7 @@ public class testSpringDemo {
     }
     
     @Test
-    public void testDemo() throws IOException {
+    public void testDemo() throws IOException, IllegalAccessException, InstantiationException {
         //String s = "";
         //boolean ss = StringUtils.isEmpty(s);
         //System.out.println(ss);
@@ -21,5 +24,14 @@ public class testSpringDemo {
         //FileCopyUtils.copy(new File("C:\\kms8.log"),new File("C:\\kms8_copy.log"));
 
         //Field f = ReflectionUtils.findField(User.class,"username");
+        //MyTestBean bean = BeanUtils.instantiate(MyTestBean.class);
+        //System.out.println(bean.getStr());
+        //MyTestBean bean2 = MyTestBean.class.newInstance();
+        //System.out.println(bean2.getStr());
+        List<String> aliais = Arrays.asList("shen","yang","yang","hello","world");
+        String[] strs = StringUtils.toStringArray(aliais);
+        for(String s: strs){
+            System.out.println(s);
+        }
     }
 }

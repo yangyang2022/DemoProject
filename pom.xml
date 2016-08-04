@@ -33,6 +33,7 @@
         <!--<module>ShiroDemo2</module>-->
         <!--<module>ShiroDemo3</module>-->
         <module>SpringHibernateStruts</module>
+        <module>Core-javaTest</module>
         <!--<module>StrutsDemo2</module>-->
         <!--<module>SSHDemo1</module>-->
         <!--<module>TempDemo</module>-->
