@@ -18,7 +18,6 @@
     </properties>
 
     <dependencies>
-
         <!--    commons     -->
         <dependency>
             <groupId>junit</groupId>
