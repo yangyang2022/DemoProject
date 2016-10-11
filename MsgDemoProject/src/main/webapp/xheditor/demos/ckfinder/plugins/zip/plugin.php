@@ -96,7 +96,7 @@ class CKFinder_Connector_CommandHandler_Unzip extends CKFinder_Connector_Command
    *
    * @param object $filePathInfo
    * @param string $originalFileName
-   * @return mixed bool(false) - if security checks fails. Otherwise string - ralative zip archive path with secured filename.
+   * @return mixed bool(false) - if security checks fails. Otherwise string - ralative zip archive path with secured attsFileName.
    */
   protected function checkOneFile($filePathInfo, $originalFileName )
   {
@@ -821,10 +821,10 @@ class CKFinder_Connector_CommandHandler_CreateZip extends CKFinder_Connector_Com
       if ( $result !== TRUE ) {
         $this->_errorHandler->throwError(CKFINDER_CONNECTOR_ERROR_UNKNOWN);
       }
-      foreach ( $files as $pathname => $filename ){
-        if ( !empty($filename) ){
+      foreach ( $files as $pathname => $attsFileName ){
+        if ( !empty($attsFileName) ){
           if ( file_exists($pathname) && is_readable($pathname) ){
-            $zip->addFile( $pathname, $filename );
+            $zip->addFile( $pathname, $attsFileName );
           }
         } else {
           $zip->addEmptyDir( $pathname );
@@ -914,7 +914,7 @@ class CKFinder_Connector_CommandHandler_DownloadZip extends CKFinder_Connector_C
       $encodedName = str_replace(array("+", "%2E"), array(" ", "."), urlencode($encodedName));
     }
     header("Content-type: application/octet-stream; name=\"" . $fileFilename . "\"");
-    header("Content-Disposition: attachment; filename=\"" . $encodedName. "\"");
+    header("Content-Disposition: attachment; attsFileName=\"" . $encodedName. "\"");
     header("Content-Length: " . filesize($filePath));
     CKFinder_Connector_Utils_FileSystem::sendFile($filePath);
     exit;

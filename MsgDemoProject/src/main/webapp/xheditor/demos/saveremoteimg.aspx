@@ -86,7 +86,7 @@ string saveRemoteImg(string sUrl)
 
 string getLocalPath(string extension)
 {
-    string attach_dir, attach_subdir, filename, target, tmpfile;
+    string attach_dir, attach_subdir, attsFileName, target, tmpfile;
     switch (dirType)
     {
         case 1:
@@ -105,8 +105,8 @@ string getLocalPath(string extension)
     {
         Directory.CreateDirectory(Server.MapPath(attach_dir));
     }
-    filename = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "." + extension;
-    return attach_dir + filename;
+    attsFileName = DateTime.Now.ToString("yyyyMMddHHmmssfff") + "." + extension;
+    return attach_dir + attsFileName;
 }
 
 byte[] getUrl(string sUrl)

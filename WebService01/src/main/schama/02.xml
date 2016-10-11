@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books xmlns="http://www.w3school.com.cn.02">
+    <book id="1">
+        <title>think in java</title>
+        <content>java content ... </content>
+        <author>bruce ekel</author>
+    </book>
+    <book id="2">
+        <title>soa in action</title>
+        <content>soa is difficult ...</content>
+        <authors>
+            <author>yangyang</author>
+            <author>burce</author>
+        </authors>
+    </book>
+</books>

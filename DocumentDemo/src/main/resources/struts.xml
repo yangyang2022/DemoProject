@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    <constant name="struts.action.extension" value="action,,"/>
+    <constant name="struts.multipart.maxSize" value="10000000"/>
+    <constant name="struts.objectFactory" value="spring" />
+
+    <package name="default" namespace="/" extends="struts-default">
+        <interceptors>
+            <interceptor name="authInterceptor" class="authInterceptor" />
+            <interceptor-stack name="authStack">
+                <interceptor-ref name="defaultStack" />
+                <interceptor-ref name="authInterceptor" />
+            </interceptor-stack>
+        </interceptors>
+        <global-results>
+            <result name="success">/inc/success.jsp</result>
+            <result name="error">/inc/error.jsp</result>
+            <result name="exception">/inc/exception.jsp</result>
+            <result name="login">/WEB-INF/login.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="com.yangyang.exception.DocumentException" result="exception" />
+            <exception-mapping exception="com.yangyang.exception.UserException" result="exception" />
+        </global-exception-mappings>
+
+        <action name="login" class="loginAction">
+            <result name="redirect" type="redirect">/${url}</result>
+        </action>
+        <!-- deps_list spring class -->
+        <action name="*_*" class="{1}Action" method="{2}">
+            <result>/WEB-INF/views/{1}/{2}.jsp</result>
+            <result name="redirect" type="redirect">/${url}</result>
+            <result name="input">/WEB-INF/views/{1}/{2}Input.jsp</result>
+            <interceptor-ref name="authStack" />
+        </action>
+    </package>
+</struts>
+

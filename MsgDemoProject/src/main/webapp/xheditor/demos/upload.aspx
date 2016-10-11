@@ -48,7 +48,7 @@ protected void Page_Load(object sender, EventArgs e)
     {
         // HTML5上传
         file = Request.BinaryRead(Request.TotalBytes);
-        localname = Server.UrlDecode(Regex.Match(disposition, "filename=\"(.+?)\"").Groups[1].Value);// 读取原始文件名
+        localname = Server.UrlDecode(Regex.Match(disposition, "attsFileName=\"(.+?)\"").Groups[1].Value);// 读取原始文件名
     }
     else 
     {        
@@ -74,7 +74,7 @@ protected void Page_Load(object sender, EventArgs e)
         if (file.Length > maxattachsize)err = "文件大小超过" + maxattachsize + "字节";
         else
         {
-            string attach_dir, attach_subdir, filename, extension, target;
+            string attach_dir, attach_subdir, attsFileName, extension, target;
 
             // 取上载文件后缀名
             extension = GetFileExt(localname);
@@ -98,9 +98,9 @@ protected void Page_Load(object sender, EventArgs e)
 
                 // 生成随机文件名
                 Random random = new Random(DateTime.Now.Millisecond);
-                filename = DateTime.Now.ToString("yyyyMMddhhmmss") + random.Next(10000) + "." + extension;
+                attsFileName = DateTime.Now.ToString("yyyyMMddhhmmss") + random.Next(10000) + "." + extension;
 
-                target = attach_dir + filename;
+                target = attach_dir + attsFileName;
                 try
                 {
                     CreateFolder(Server.MapPath(attach_dir));
