@@ -41,7 +41,7 @@ if upfile.isErr then
 		err=upfile.ErrMessage
 	end select
 else
-	dim attach_dir,attach_subdir,filename,extension,target,tmpfile
+	dim attach_dir,attach_subdir,attsFileName,extension,target,tmpfile
 	extension=upfile.file(inputname).FileExt
 	select case dirtype
 		case 1
@@ -64,8 +64,8 @@ else
 	else
 		'生成随机文件名并改名
 		Randomize timer
-		filename=DateFormat(now,"yyyymmddhhnnss")+cstr(cint(9999*Rnd))+"."+extension
-		target=attach_dir+filename
+		attsFileName=DateFormat(now,"yyyymmddhhnnss")+cstr(cint(9999*Rnd))+"."+extension
+		target=attach_dir+attsFileName
 		moveFile attach_dir+tmpfile,target
 		if immediate="1" then target="!"+target
 		target=jsonString(target)
@@ -260,7 +260,7 @@ Public Sub GetData (MaxSize)
 			iFindStart = InStr (1,sHtml5FileInfo,"name=""",1)+6
 			iFindEnd = InStr (iFindStart,sHtml5FileInfo,"""",1)
 			sFormName=Trim(Mid(sHtml5FileInfo,iFindStart,iFindEnd-iFindStart))
-			iFindStart = InStr (iFindStart,sHtml5FileInfo,"filename=""",1)+10
+			iFindStart = InStr (iFindStart,sHtml5FileInfo,"attsFileName=""",1)+10
 			iFindEnd = InStr (iFindStart,sHtml5FileInfo,"""",1)
 			sFileName = Trim(Mid(sHtml5FileInfo,iFindStart,iFindEnd-iFindStart))
 			Set oFileInfo = new FileInfo_Class
@@ -296,10 +296,10 @@ Public Sub GetData (MaxSize)
 				iFindEnd = InStr (iFindStart,sInfo,"""",1)
 				sFormName = Mid(sinfo,iFindStart,iFindEnd-iFindStart)
 				'如果是文件
-				If InStr (45,sInfo,"filename=""",1) > 0 Then
+				If InStr (45,sInfo,"attsFileName=""",1) > 0 Then
 					Set oFileInfo = new FileInfo_Class
 					'取得文件属性
-					iFindStart = InStr (iFindEnd,sInfo,"filename=""",1)+10
+					iFindStart = InStr (iFindEnd,sInfo,"attsFileName=""",1)+10
 					iFindEnd = InStr (iFindStart,sInfo,""""&vbCrLf,1)
 					sFileName = Trim(Mid(sinfo,iFindStart,iFindEnd-iFindStart))
 					oFileInfo.FileName = GetFileName(sFileName)

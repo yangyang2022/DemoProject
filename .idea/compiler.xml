@@ -22,17 +22,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="Core-javaTest" />
-        <module name="SpringHibernateStruts" />
+        <module name="Demo-POI" />
+        <module name="Netty5" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Clojure" target="1.8" />
+      <module name="Core-Demo" target="1.8" />
       <module name="Core-java" target="1.8" />
+      <module name="core-java" target="1.8" />
       <module name="Core-javaTest" target="1.8" />
+      <module name="Core-POI" target="1.8" />
+      <module name="Demo-POI" target="1.8" />
       <module name="DemoProject" target="1.8" />
       <module name="DemoTest" target="1.8" />
+      <module name="DocumentDemo" target="1.8" />
       <module name="EmployeeManager" target="1.8" />
       <module name="FileDemo" target="1.8" />
+      <module name="FreeMarker" target="1.8" />
       <module name="HibernateAnnotation" target="1.8" />
       <module name="HibernateDemo" target="1.8" />
       <module name="HibernateInAction" target="1.8" />
@@ -44,6 +51,9 @@
       <module name="Log4jDemo" target="1.8" />
       <module name="MsgDemo" target="1.8" />
       <module name="MsgDemoProject" target="1.8" />
+      <module name="Netty5" target="1.8" />
+      <module name="QrCode" target="1.8" />
+      <module name="ScalaDemo" target="1.8" />
       <module name="ShiroDemo" target="1.8" />
       <module name="ShiroDemo2" target="1.8" />
       <module name="ShiroDemo3" target="1.8" />
@@ -64,6 +74,7 @@
       <module name="StrutsDemo2" target="1.8" />
       <module name="TempDemo" target="1.8" />
       <module name="TestServlet" target="1.5" />
+      <module name="WebService01" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

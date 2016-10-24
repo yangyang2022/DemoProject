@@ -28,7 +28,7 @@ $msg = "''";
 $tempPath=$attachDir.'/'.date("YmdHis").mt_rand(10000,99999).'.tmp';
 $localName='';
 
-if(isset($_SERVER['HTTP_CONTENT_DISPOSITION'])&&preg_match('/attachment;\s+name="(.+?)";\s+filename="(.+?)"/i',$_SERVER['HTTP_CONTENT_DISPOSITION'],$info)){//HTML5上传
+if(isset($_SERVER['HTTP_CONTENT_DISPOSITION'])&&preg_match('/attachment;\s+name="(.+?)";\s+attsFileName="(.+?)"/i',$_SERVER['HTTP_CONTENT_DISPOSITION'],$info)){//HTML5上传
 	file_put_contents($tempPath,file_get_contents("php://input"));
 	$localName=urldecode($info[2]);
 }

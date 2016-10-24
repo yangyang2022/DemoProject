@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" native2AsciiForPropertiesFiles="true">
-    <file url="file://$PROJECT_DIR$/Core-javaTest" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Core-Demo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Core-POI" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Demo-POI" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HibernateAnnotation" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HibernateDemo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/HibernateInAction" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/JMSDemo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/Log4jDemo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Netty5" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringDataDemo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringDataJPA" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringDemo" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringDemp" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/SpringJDBC" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/TempDemo" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/WebService01" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

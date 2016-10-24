@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persons xmlns="http://www.w3school.com.cn.03" sex="男">
+    <name>zhangsan</name>
+    <age>22</age>
+    <email>yangyanghdu@qq.com</email>
+</persons>

@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Core-javaTest/Core-javaTest.iml" filepath="$PROJECT_DIR$/Core-javaTest/Core-javaTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Demo-POI/Demo-POI.iml" filepath="$PROJECT_DIR$/Demo-POI/Demo-POI.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoProject.iml" filepath="$PROJECT_DIR$/DemoProject.iml" />
-      <module fileurl="file://$PROJECT_DIR$/SpringHibernateStruts/SpringHibernateStruts.iml" filepath="$PROJECT_DIR$/SpringHibernateStruts/SpringHibernateStruts.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Netty5/Netty5.iml" filepath="$PROJECT_DIR$/Netty5/Netty5.iml" />
     </modules>
   </component>
 </project>

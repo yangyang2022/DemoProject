@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.w3school.com.cn.03"
+        xmlns:tns="http://www.w3school.com.cn.03"
+        elementFormDefault="qualified">
+
+    <element name="persons" type="tns:person"/>
+    <complexType name="person">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="age" type="tns:ageType" />
+            <element name="email" type="tns:emailType" />
+        </sequence>
+        <attribute name="sex" type="tns:sexType" />
+    </complexType>
+
+    <!-- simpleType 只有类型 没有元素 -->
+    <simpleType name="ageType">
+        <!-- 约束-->
+        <restriction base="int">
+            <minInclusive value="1" />
+            <maxInclusive value="150" />
+        </restriction>
+    </simpleType>
+    <simpleType name="sexType">
+        <restriction base="string">
+            <enumeration value="男" />
+            <enumeration value="女" />
+        </restriction>
+    </simpleType>
+    <simpleType name="emailType">
+        <restriction base="string">
+            <pattern value="(\w+\.*)*\w+@\w+\.[a-zA-Z]{2,3}" />
+            <minLength value="6" />
+            <maxLength value="20" />
+        </restriction>
+    </simpleType>
+</schema>

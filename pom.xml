@@ -11,6 +11,7 @@
     <modules>
         <!--<module>DemoTest</module>-->
         <!--<module>Core-java</module>-->
+        <!--<module>Core-javaTest</module>-->
         <!--<module>EmployeeManager</module>-->
         <!--<module>ShopDemo</module>-->
         <!--<module>MsgDemoProject</module>-->
@@ -32,8 +33,7 @@
         <!--<module>ShiroDemo</module>-->
         <!--<module>ShiroDemo2</module>-->
         <!--<module>ShiroDemo3</module>-->
-        <module>SpringHibernateStruts</module>
-        <module>Core-javaTest</module>
+        <!--<module>SpringHibernateStruts</module>-->
         <!--<module>StrutsDemo2</module>-->
         <!--<module>SSHDemo1</module>-->
         <!--<module>TempDemo</module>-->
@@ -42,6 +42,18 @@
         <!--<module>FileDemo</module>-->
         <!--<module>JSTLDemo</module>-->
         <!--<module>SitMeshDemo</module>-->
+        <!--<module>DocumentDemo</module>-->
+        <!--<module>FreeMarker</module>-->
+        <!--<module>WebService01</module>-->
+        <!--<module>Core-Demo</module>-->
+        <!--<module>Core-POI</module>-->
+        <module>Demo-POI</module>
+        <module>QrCode</module>
+        <module>Clojure</module>
+        <module>Clojure</module>
+        <module>Clojure</module>
+        <module>ScalaDemo</module>
+        <module>Netty5</module>
     </modules>
 
     <dependencies>
@@ -52,9 +64,30 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
+        <!-- netty 5-->
+        <netty.version>5.0.0.Alpha2</netty.version>
+        <!-- netty 3-->
+        <netty3.version>3.9.0.Final</netty3.version>
+
+        <!-- protobuf -->
+        <protobuf.version>3.0.2</protobuf.version>
+
+
+        <!-- zxing -->
+        <zxing.version>3.3.0</zxing.version>
+
         <!-- servlet and jsp -->
         <javax.servlet.version>2.3.1</javax.servlet.version>
         <jsp.version>3.1.0</jsp.version>
+
+        <!-- poi version -->
+        <poi.version>3.14</poi.version>
+
+        <!-- quartz -->
+        <quartz.version>2.2.3</quartz.version>
+
+        <!-- java mail-->
+        <java.mail>1.4.7</java.mail>
 
         <!-- junit test -->
         <Junit-version>4.12</Junit-version>
@@ -120,6 +153,7 @@
         <spring-tx.version>4.3.0.RELEASE</spring-tx.version>
         <spring-orm.version>4.3.0.RELEASE</spring-orm.version>
         <spring-beans.version>4.3.0.RELEASE</spring-beans.version>
+
         <spring.version>4.3.0.RELEASE</spring.version>
 
         <!-- spring data -->
@@ -138,7 +172,11 @@
         <!-- shiro 1.2.6 1.2.4 -->
         <shiro.version>1.2.6</shiro.version>
 
-    </properties>
+        <!-- freemarker -->
+        <freemarker.version>2.3.23</freemarker.version>
+
+
+</properties>
     <repositories>
         <repository>
             <id>central</id>

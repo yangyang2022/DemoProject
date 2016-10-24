@@ -92,25 +92,25 @@ class CKFinder_Connector_CommandHandler_GetFiles extends CKFinder_Connector_Comm
             foreach ($files as $file) {
                 $filemtime = @filemtime($_sServerDir . $file);
 
-                //otherwise file doesn't exist or we can't get it's filename properly
+                //otherwise file doesn't exist or we can't get it's attsFileName properly
                 if ($filemtime !== false) {
-                    $filename = CKFinder_Connector_Utils_Misc::mbBasename($file);
-                    if (!$resourceTypeInfo->checkExtension($filename, false)) {
+                    $attsFileName = CKFinder_Connector_Utils_Misc::mbBasename($file);
+                    if (!$resourceTypeInfo->checkExtension($attsFileName, false)) {
                         continue;
                     }
-                    if ($resourceTypeInfo->checkIsHiddenFile($filename)) {
+                    if ($resourceTypeInfo->checkIsHiddenFile($attsFileName)) {
                         continue;
                     }
                     $oFileNode[$i] = new Ckfinder_Connector_Utils_XmlNode("File");
                     $oFilesNode->addChild($oFileNode[$i]);
                     $oFileNode[$i]->addAttribute("name", CKFinder_Connector_Utils_FileSystem::convertToConnectorEncoding(CKFinder_Connector_Utils_Misc::mbBasename($file)));
                     $oFileNode[$i]->addAttribute("date", @date("YmdHi", $filemtime));
-                    if (!empty($_thumbServerPath) && preg_match(CKFINDER_REGEX_IMAGES_EXT, $filename)) {
-                        if (file_exists($_thumbServerPath . $filename)) {
-                            $oFileNode[$i]->addAttribute("thumb", $filename);
+                    if (!empty($_thumbServerPath) && preg_match(CKFINDER_REGEX_IMAGES_EXT, $attsFileName)) {
+                        if (file_exists($_thumbServerPath . $attsFileName)) {
+                            $oFileNode[$i]->addAttribute("thumb", $attsFileName);
                         }
                         elseif ($_showThumbs) {
-                            $oFileNode[$i]->addAttribute("thumb", "?" . $filename);
+                            $oFileNode[$i]->addAttribute("thumb", "?" . $attsFileName);
                         }
                     }
                     $size = filesize($_sServerDir . $file);

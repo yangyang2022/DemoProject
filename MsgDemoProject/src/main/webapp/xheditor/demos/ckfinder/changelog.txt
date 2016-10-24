@@ -107,7 +107,7 @@ Security Release: fixed filtering of unsafe characters for IIS6 web server.
 - Improved error handling when receiving an invalid XML response from the server connector.
 - Added an option to show the OS icons in Firefox: config.useNativeIcons.
 - Added an option to specify the path to the custom server connector: config.connectorPath.
-- Fixed: The "Download" option returns an improperly encoded filename.
+- Fixed: The "Download" option returns an improperly encoded attsFileName.
 - Fixed: The dialog window used during the copying/pasting operations was broken in IE7.
 - Fixed: The Folders Pane was too small in Internet Explorer 9 in compatibility mode.
 - Fixed: English text in dialog window titles was flipped when using an RTL language.

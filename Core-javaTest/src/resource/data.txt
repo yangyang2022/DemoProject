@@ -1,5 +1,0 @@
-hello world
-hello yangyang
-hello java8
-hello lambda
-S

@@ -124,7 +124,7 @@ class CKFinder_Connector_Utils_Misc
      *
      * @static
      * @access public
-     * @param string $filename
+     * @param string $attsFileName
      * @return boolean
      */
     public static function setMemoryForImage($imageWidth, $imageHeight, $imageBits, $imageChannels)
@@ -263,15 +263,15 @@ class CKFinder_Connector_Utils_Misc
     *
     * @static
     * @access public
-    * @param string $filename
+    * @param string $attsFileName
     * @return resource
     */
-    public static function imageCreateFromBmp($filename)
+    public static function imageCreateFromBmp($attsFileName)
     {
         //20 seconds seems to be a reasonable value to not kill a server and process images up to 1680x1050
         @set_time_limit(20);
 
-        if (false === ($f1 = fopen($filename, "rb"))) {
+        if (false === ($f1 = fopen($attsFileName, "rb"))) {
             return false;
         }
 

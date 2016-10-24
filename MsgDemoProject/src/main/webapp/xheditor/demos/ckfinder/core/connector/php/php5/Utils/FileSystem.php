@@ -161,12 +161,12 @@ class CKFinder_Connector_Utils_FileSystem
         /*    Scan the dir and recursively unlink    */
         $files = scandir($path);
         if ($files) {
-            foreach($files as $filename)
+            foreach($files as $attsFileName)
             {
-                if ($filename == '.' || $filename == '..') {
+                if ($attsFileName == '.' || $attsFileName == '..') {
                     continue;
                 }
-                $file = str_replace('//','/',$path.'/'.$filename);
+                $file = str_replace('//','/',$path.'/'.$attsFileName);
                 CKFinder_Connector_Utils_FileSystem::unlink($file);
             }
         }
@@ -220,14 +220,14 @@ class CKFinder_Connector_Utils_FileSystem
 	 *
      * @static
      * @access public
-	 * @param string $filename
+	 * @param string $attsFileName
 	 * @return boolean
 	 */
-    public static function readfileChunked($filename)
+    public static function readfileChunked($attsFileName)
     {
         $chunksize = 1024 * 10; // how many bytes per chunk
 
-        $handle = fopen($filename, 'rb');
+        $handle = fopen($attsFileName, 'rb');
         if ($handle === false) {
             return false;
         }
@@ -245,7 +245,7 @@ class CKFinder_Connector_Utils_FileSystem
     * Replace accented UTF-8 characters by unaccented ASCII-7 "equivalents".
     * The purpose of this function is to replace characters commonly found in Latin
     * alphabets with something more or less equivalent from the ASCII range. This can
-    * be useful for converting a UTF-8 to something ready for a filename, for example.
+    * be useful for converting a UTF-8 to something ready for a attsFileName, for example.
     * Following the use of this function, you would probably also pass the string
     * through utf8_strip_non_ascii to clean out any other non-ASCII chars
     *
@@ -440,7 +440,7 @@ class CKFinder_Connector_Utils_FileSystem
         }
 
         /**
-         * The filename of the currently executing script, relative to the document root.
+         * The attsFileName of the currently executing script, relative to the document root.
          * For instance, $_SERVER['PHP_SELF'] in a script at the address http://example.com/test.php/foo.bar
          * would be /test.php/foo.bar.
          */
@@ -608,18 +608,18 @@ class CKFinder_Connector_Utils_FileSystem
         }
 
         $hasChildren = false;
-        while (false !== ($filename = readdir($fh))) {
-            if ($filename == '.' || $filename == '..') {
+        while (false !== ($attsFileName = readdir($fh))) {
+            if ($attsFileName == '.' || $attsFileName == '..') {
                 continue;
-            } else if (is_dir($serverPath . $filename)) {
+            } else if (is_dir($serverPath . $attsFileName)) {
                 //we have found valid directory
                 $_config =& CKFinder_Connector_Core_Factory::getInstance("Core_Config");
                 $_acl = $_config->getAccessControlConfig();
-                $_aclMask = $_acl->getComputedMask($_resourceType->getName(), $clientPath . $filename);
+                $_aclMask = $_acl->getComputedMask($_resourceType->getName(), $clientPath . $attsFileName);
                 if ( ($_aclMask & CKFINDER_CONNECTOR_ACL_FOLDER_VIEW) != CKFINDER_CONNECTOR_ACL_FOLDER_VIEW ) {
                     continue;
                 }
-                if ($_resourceType->checkIsHiddenFolder($filename)) {
+                if ($_resourceType->checkIsHiddenFolder($attsFileName)) {
                   continue;
                 }
 

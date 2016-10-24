@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters>
+    <filter id="student">
+        <field cid="sex" id="xbdm_equals" type="select" />
+        <field cid="nation" id="nation_equals" />
+    </filter>
+</filters>

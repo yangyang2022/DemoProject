@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="//cdn.bootcss.com/jquery/3.1.0/jquery.js"></script>
+    <script  type="text/javascript" src="js/list.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            alert("load ... ")
+            $('#mm').click(function () {
+                alert('click me')
+            })
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Hello h1</h1>
+    <h2>Hello h2</h2>
+    <h3>Hello h3</h3>
+    <p id="logo">hello Logo</p>
+    <p id="mm">Click me</p>
+    <input type="button" value="click" id="bt1" onclick="helloworld2()"/>
+    <input type="button" value="click" id="bt2" onclick="helloworld()"/>
+    <ul id="menu">
+        <li>demo1</li>
+        <li>demo2</li>
+        <li>demo3</li>
+        <li>demo4</li>
+    </ul>
+</body>
+</html>

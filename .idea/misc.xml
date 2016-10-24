@@ -47,10 +47,13 @@
     <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/SpringMVCDemo/WEB-INF/classes/beans.xml" />
     <file type="Spring" url="file://$PROJECT_DIR$/SpringMVCDemo/target/SpringMVCDemo/WEB-INF/classes/springmvc.xml" />
     <file type="web" url="file://$PROJECT_DIR$/DemoTest" />
+    <file type="web" url="file://$PROJECT_DIR$/DocumentDemo" />
     <file type="web" url="file://$PROJECT_DIR$/FileDemo" />
+    <file type="web" url="file://$PROJECT_DIR$/FreeMarker" />
     <file type="web" url="file://$PROJECT_DIR$/JavaScriptDemo" />
     <file type="web" url="file://$PROJECT_DIR$/JSTLDemo" />
     <file type="web" url="file://$PROJECT_DIR$/MsgDemoProject" />
+    <file type="web" url="file://$PROJECT_DIR$/QrCode" />
     <file type="web" url="file://$PROJECT_DIR$/ShiroDemo" />
     <file type="web" url="file://$PROJECT_DIR$/ShiroDemo2" />
     <file type="web" url="file://$PROJECT_DIR$/ShiroDemo3" />
@@ -76,8 +79,12 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/Clojure/pom.xml" />
+        <option value="$PROJECT_DIR$/Core-POI/pom.xml" />
         <option value="$PROJECT_DIR$/JunitDemo/pom.xml" />
         <option value="$PROJECT_DIR$/MsgDemo/pom.xml" />
+        <option value="$PROJECT_DIR$/QrCode/pom.xml" />
+        <option value="$PROJECT_DIR$/ScalaDemo/pom.xml" />
         <option value="$PROJECT_DIR$/TestServlet/pom.xml" />
       </set>
     </option>
@@ -95,4 +102,5 @@
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" assert-keyword="true" jdk-15="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
+  <component name="WebServicesPlugin" addRequiredLibraries="true" />
 </project>

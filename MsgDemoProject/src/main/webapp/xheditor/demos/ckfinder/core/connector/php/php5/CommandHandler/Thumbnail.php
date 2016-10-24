@@ -118,7 +118,7 @@ class CKFinder_Connector_CommandHandler_Thumbnail extends CKFinder_Connector_Com
         header("Content-type: " . $mime . "; name=\"" . CKFinder_Connector_Utils_Misc::mbBasename($thumbFilePath) . "\"");
         header("Last-Modified: ".gmdate('D, d M Y H:i:s', $mtime) . " GMT");
         //header("Content-type: application/octet-stream; name=\"{$file}\"");
-        //header("Content-Disposition: attachment; filename=\"{$file}\"");
+        //header("Content-Disposition: attachment; attsFileName=\"{$file}\"");
         header("Content-Length: ".$size);
         readfile($thumbFilePath);
         exit;
