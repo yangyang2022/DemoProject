@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Demo-POI/Demo-POI.iml" filepath="$PROJECT_DIR$/Demo-POI/Demo-POI.iml" />
       <module fileurl="file://$PROJECT_DIR$/DemoProject.iml" filepath="$PROJECT_DIR$/DemoProject.iml" />
       <module fileurl="file://$PROJECT_DIR$/Netty5/Netty5.iml" filepath="$PROJECT_DIR$/Netty5/Netty5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SpringNetty/SpringNetty.iml" filepath="$PROJECT_DIR$/SpringNetty/SpringNetty.iml" />
     </modules>
   </component>
 </project>

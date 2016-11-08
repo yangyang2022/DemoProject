@@ -24,13 +24,14 @@
         <processorPath useClasspath="true" />
         <module name="Demo-POI" />
         <module name="Netty5" />
+        <module name="SpringNetty" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Clojure" target="1.8" />
       <module name="Core-Demo" target="1.8" />
-      <module name="Core-java" target="1.8" />
       <module name="core-java" target="1.8" />
+      <module name="Core-java" target="1.8" />
       <module name="Core-javaTest" target="1.8" />
       <module name="Core-POI" target="1.8" />
       <module name="Demo-POI" target="1.8" />
@@ -69,6 +70,7 @@
       <module name="SpringHibernateStruts" target="1.8" />
       <module name="SpringJDBC" target="1.8" />
       <module name="SpringMVCDemo" target="1.8" />
+      <module name="SpringNetty" target="1.8" />
       <module name="SSHDemo1" target="1.8" />
       <module name="Struts2Demo" target="1.8" />
       <module name="StrutsDemo2" target="1.8" />

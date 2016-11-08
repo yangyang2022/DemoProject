@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="SpringNetty:war">
+    <output-path>$PROJECT_DIR$/SpringNetty/target</output-path>
+    <root id="archive" name="SpringNetty.war">
+      <element id="artifact" artifact-name="SpringNetty:war exploded" />
+    </root>
+  </artifact>
+</component>

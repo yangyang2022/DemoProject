@@ -54,6 +54,7 @@
         <module>Clojure</module>
         <module>ScalaDemo</module>
         <module>Netty5</module>
+        <module>SpringNetty</module>
     </modules>
 
     <dependencies>

@@ -1,4 +1,4 @@
-package com.yangyang.protobuf;
+package com.yangyang.serial;
 
 
 import org.jboss.netty.buffer.ChannelBuffer;
